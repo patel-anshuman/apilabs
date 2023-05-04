@@ -1,0 +1,93 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 1%;
+}
+
+#nav-1 {
+    border: 2px solid red;
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+#nav-1 button {
+    height: 35px;
+    border-radius: 5px;
+    color: black;
+    border-radius: 5px;
+}
+
+#nav-1 > a:hover {
+    background-color: #f0f0f0;
+}
+
+#search > button {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    padding: 0px 30px;
+    color: #7a7e84;
+}
+
+#search > button > img {
+    width: 15px;
+    height: 15px;
+}
+
+#search > button > span {
+    margin: 0px;
+}
+
+#nav-2 {
+    border: 2px solid red;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav-2 > button {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#nav-2 > button:hover {
+    background-color: #ededed;
+}
+
+#nav-2 > button > img {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+}
+
+#nav-2 > #invite-btn {
+    width: 70px;
+    height: 25px;
+    color: white;
+    background-color: #097bed;
+}
+
+#nav-2 > #invite-btn > img {
+    width: 12px;
+    height: 12px;
+}
