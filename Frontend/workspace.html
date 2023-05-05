@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/workspace.css">
 </head>
 <body>
+    <!------------------------------------ Nav bar ------------------------------------------>
     <nav>
         <div id="nav-1">
             <a href="./dashboard.html"><button>Home</button></a>
@@ -37,5 +38,74 @@
             </button>
         </div>
     </nav>
+
+    <!------------------------------------ Workspace ------------------------------------------>
+    <section id="workspace">
+        <div id="side-pane">
+            <div id="side-pane-header">
+                <div>
+                    <button id="my-workspace-btn">
+                        <img src="" alt="">
+                        <span>My Workspace</span>
+                    </button>
+                </div>
+                <div>
+                    <button>New</button>
+                    <button>Import</button>
+                </div>
+            </div>
+            <div id="side-pane-body">
+                <div id="side-pane-body-button">
+                    <button>
+                        <img src="" alt="">
+                        <span>Collections</span>
+                    </button>
+                    <br>
+                    <button>
+                        <img src="" alt="">
+                        <span>Enviroments</span>
+                    </button>
+                    <br>
+                    <button>
+                        <img src="" alt="">
+                        <span>History</span>
+                    </button>
+                    <hr>
+                </div>
+                <div id="side-pane-body-area">
+
+                </div>
+            </div>
+        </div>
+        <div id="work-pane">
+            <div id="work-title">
+                <p>Untitled Request</p>
+            </div>
+            <div id="work-body">
+                <div id="work-method">
+                    <select name="method" id="method">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="PATCH">PATCH</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+                    <input type="url" name="url" id="url" placeholder="Enter URL or paste text">
+                    <button id="send-btn">Send</button>
+                </div>
+                <div id="work-data">
+                    <button id="params-btn">Params</button>
+                    <button id="auth-btn">Authorization</button>
+                    <button id="headers-btn">Headers</button>
+                    <button id="body-btn">Body</button>
+                </div>
+                <div id="work-data-inputs"></div>
+            </div>
+            <div id="response-body">
+                <p>Response</p>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
