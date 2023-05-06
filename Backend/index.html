@@ -70,13 +70,11 @@ socket.on("TeamMessage",(data)=>{
 
 
 function outputMessage(message){  
-
     const div = document.createElement("div");
     const p=document.createElement("p");
     p.innerText=message.username
     const para=document.createElement("p")
     para.innerText=message.message;
-   
     chatMessages.append(p,para)
     }
 </script>
