@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/apilabs.png" type="image/x-icon">
     <title>My Workspace</title>
     <link rel="stylesheet" href="./styles/workspace.css">
 </head>
@@ -39,13 +40,20 @@
         </div>
     </nav>
 
+    <div id="account-window" class="show">
+        <img src="./images/navbar/account.png">
+        <b><p id="user-name">user.name</p></b>
+        <p id="user-email">user@email.com</p>
+        <button>Sign Out</button>
+    </div>
+
     <!------------------------------------ Workspace ------------------------------------------>
     <section id="workspace">
         <div id="side-pane">
             <div id="side-pane-header">
                 <div>
                     <button id="my-workspace-btn">
-                        <img src="" alt="">
+                        <img src="./images/workspace/user.png" alt="">
                         <span>My Workspace</span>
                     </button>
                 </div>
@@ -57,23 +65,21 @@
             <div id="side-pane-body">
                 <div id="side-pane-body-button">
                     <button>
-                        <img src="" alt="">
+                        <img src="./images/workspace/collection.png" alt="">
                         <span>Collections</span>
                     </button>
-                    <br>
                     <button>
-                        <img src="" alt="">
+                        <img src="./images/workspace/hosting.png" alt="">
                         <span>Enviroments</span>
                     </button>
-                    <br>
                     <button>
-                        <img src="" alt="">
+                        <img src="./images/workspace/history.png" alt="">
                         <span>History</span>
                     </button>
                     <hr>
                 </div>
                 <div id="side-pane-body-area">
-
+                    <!-- All requests data appended here by DOM -->
                 </div>
             </div>
         </div>
@@ -99,13 +105,28 @@
                     <button id="headers-btn">Headers</button>
                     <button id="body-btn">Body</button>
                 </div>
-                <div id="work-data-inputs"></div>
+                <div id="work-data-inputs">
+                    <textarea name="body-input-area" id="body-input-area" cols="100" rows="20"></textarea>
+                </div>
             </div>
             <div id="response-body">
+                <!-- Response data appended here  -->
                 <p>Response</p>
+                <div id="dummy-data">
+                    <img src="https://postman.com/_aether-assets/illustrations/light/illustration-hit-send.svg" alt="">
+                    <p>Enter the URL and click Send to get a response</p>
+                </div>
             </div>
         </div>
     </section>
 
 </body>
+<script>
+    // const accountBtn = document.getElementById('account-btn');
+    // const accountWindow = document.getElementById('account-window');
+
+    // accountButton.addEventListener('click', function() {
+    //     accountWindow.classList.toggle('hidden');
+    // });
+</script>
 </html>
