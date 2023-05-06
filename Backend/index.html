@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+    <style>
+      
+    </style>
+</head>
+<body>
+    <form id="Form" action="">
+    Team Name :- <input type="text" name="" id="Team_name">
+    User Name :- <input type="text" name="" id="User_name">
+    <input type="submit" value="Enter">
+</form>
+<h1>Team Name <span id="Show_Team_name"></span></h1>
+    <h1>HEY This is <span id="Show_User_name"></span></h1>
+<div id="DetailsDiv" >
+    <div id="messageDiv"></div>
+    <form id="messageform" action="">
+        <input type="text" name="" id="message" placeholder="Type a message">
+        <input type="submit" value="➤">
+    </form>
+</div>
+</body>
+</html>
+<script >
+    const socket = io("http://localhost:8954",{transports:["websocket"]}); 
+    socket.on("connection",(msg)=>{
+        console.log("User is connected")
+    })
+    
+ const form = document.getElementById("Form")
+ const Team_name_INP = document.getElementById("Team_name")
+ const User_name_INP = document.getElementById("User_name")
+
+ const Display_TeamName = document.getElementById("Show_Team_name")
+ const Display_UserName = document.getElementById("Show_User_name")
+
+ const chatMessages = document.getElementById("messageDiv")
+const message = document.getElementById("message")
+const msgform = document.getElementById("messageform")
+let name = 
+form.addEventListener("submit",e=>{
+    e.preventDefault()
+    Display_TeamName.innerText = ""
+    Display_UserName.innerText = ""
+    Display_TeamName.innerText = Team_name_INP.value;
+    Display_UserName.innerText = User_name_INP.value;
+    socket.emit("MessengerName",{Team_name:Team_name_INP.value,User_name:User_name_INP.value})
+   
+    Team_name_INP.value = ""
+    User_name_INP.value = ""
+})
+
+msgform.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    socket.emit("message",{message:message.value,username:Display_UserName.innerText})
+    
+})
+
+
+socket.on("TeamMessage",(data)=>{
+    console.log(data)
+     outputMessage(data)
+})
+
+
+function outputMessage(message){  
+    const div = document.createElement("div");
+    const p=document.createElement("p");
+    p.innerText=message.username
+    const para=document.createElement("p")
+    para.innerText=message.message;
+    chatMessages.append(p,para)
+    }
+</script>

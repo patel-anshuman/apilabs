@@ -18,7 +18,7 @@ nav {
 #nav-1 {
     /* border: 2px solid red; */
     display: flex;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
@@ -37,7 +37,7 @@ nav {
     background-color: #f0f0f0;
 }
 
-#search > button {
+#search>button {
     height: 35px;
     border-radius: 5px;
     border: none;
@@ -49,28 +49,28 @@ nav {
     color: #7a7e84;
 }
 
-#search > button:hover {
+#search>button:hover {
     border: 1px solid #a6a6a6;
 }
 
-#search > button > img {
+#search>button>img {
     width: 15px;
     height: 15px;
 }
 
-#search > button > span {
+#search>button>span {
     margin: 0px;
 }
 
 #nav-2 {
     /* border: 2px solid red; */
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     gap: 20px;
 }
 
-#nav-2 > button {
+#nav-2>button {
     height: 35px;
     width: 35px;
     display: flex;
@@ -82,29 +82,29 @@ nav {
     background-color: white;
 }
 
-#nav-2 > button:hover {
+#nav-2>button:hover {
     background-color: #ededed;
 }
 
-#nav-2 > button > img {
+#nav-2>button>img {
     width: 20px;
     height: 20px;
     background-color: transparent;
 }
 
-#nav-2 > #invite-btn {
+#nav-2>#invite-btn {
     width: 70px;
     height: 25px;
     color: white;
     background-color: #097bed;
 }
 
-#nav-2 > #invite-btn > img {
+#nav-2>#invite-btn>img {
     width: 12px;
     height: 12px;
 }
 
-#nav-2 > #account-btn > img {
+#nav-2>#account-btn>img {
     width: 24px;
     height: 24px;
 }
@@ -115,7 +115,8 @@ nav {
     width: 100%;
     display: flex;
 }
-#workspace > div {
+
+#workspace>div {
     /* border: 2px solid red; */
     height: 90vh;
 }
@@ -139,17 +140,19 @@ nav {
     padding: 8px 10px;
     border: 1px solid #d5d6d6;
 }
-#side-pane-header > div:nth-child(1) > button {
+
+#side-pane-header>div:nth-child(1)>button {
     border: none;
     background-color: transparent;
     font-weight: bold;
     font-size: 12px;
 }
-#side-pane-header > div:nth-child(1) > button:hover {
+
+#side-pane-header>div:nth-child(1)>button:hover {
     color: #097bed;
 }
 
-#side-pane-header > div:nth-child(2) > button {
+#side-pane-header>div:nth-child(2)>button {
     border: none;
     background-color: #ededed;
     padding: 5px 10px;
@@ -157,7 +160,7 @@ nav {
     font-weight: bold;
 }
 
-#side-pane-header > div {
+#side-pane-header>div {
     margin: 5px 0px;
 }
 
@@ -182,7 +185,7 @@ nav {
     border: 1px solid #d5d6d6;
 }
 
-#side-pane-body-button > button {
+#side-pane-body-button>button {
     width: 90%;
     height: 50px;
     margin: 5%;
@@ -191,20 +194,42 @@ nav {
     border-radius: 5px;
     background-color: transparent;
 }
-#side-pane-body-button > button:hover {
+
+#side-pane-body-button>button:hover {
     background-color: #ededed;
 }
 
 #side-pane-body-area {
+    overflow-y: scroll;
     width: 100%;
     border: 1px solid #d5d6d6;
 }
 
-#work-pane > div {
+#side-pane-body-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+#side-pane-body-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    /* Color of the track */
+}
+
+#side-pane-body-area::-webkit-scrollbar-thumb {
+    background: #888;
+    /* Color of the thumb */
+}
+
+#side-pane-body-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    /* Color of the thumb when hovering */
+}
+
+#work-pane>div {
     /* border: 1px solid red; */
     font-family: Arial, Helvetica, sans-serif;
-    
+
 }
+
 #work-title {
     width: auto;
     height: 40px;
@@ -213,7 +238,8 @@ nav {
     display: flex;
     align-items: center;
 }
-#work-title > p {
+
+#work-title>p {
     font-size: 12px;
     font-weight: 600;
 }
@@ -282,7 +308,7 @@ nav {
     gap: 10px;
 }
 
-#work-data > button {
+#work-data>button {
     color: #555;
     height: 90%;
     cursor: pointer;
@@ -291,7 +317,7 @@ nav {
     background-color: white;
 }
 
-#work-data > button:hover {
+#work-data>button:hover {
     color: black;
 }
 
@@ -300,10 +326,9 @@ nav {
     border: 1px solid #d5d6d6;
     padding: 10px;
 }
-#response-body > p {
+
+#response-body>p {
     margin: 0px;
     font-size: 14px;
     color: #a6a6a6;
 }
-
-

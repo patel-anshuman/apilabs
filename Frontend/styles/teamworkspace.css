@@ -1,0 +1,309 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/*--------------------- Navbar --------------------- */
+
+nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 1%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+#nav-1 {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+#nav-1 button {
+    height: 35px;
+    border-radius: 5px;
+    color: black;
+    border-radius: 5px;
+    padding: 0px 10px;
+    border: none;
+    background-color: white;
+}
+
+#nav-1 button:hover {
+    background-color: #f0f0f0;
+}
+
+#search > button {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    padding: 0px 30px;
+    color: #7a7e84;
+}
+
+#search > button:hover {
+    border: 1px solid #a6a6a6;
+}
+
+#search > button > img {
+    width: 15px;
+    height: 15px;
+}
+
+#search > button > span {
+    margin: 0px;
+}
+
+#nav-2 {
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav-2 > button {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#nav-2 > button:hover {
+    background-color: #ededed;
+}
+
+#nav-2 > button > img {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+}
+
+#nav-2 > #invite-btn {
+    width: 70px;
+    height: 25px;
+    color: white;
+    background-color: #097bed;
+}
+
+#nav-2 > #invite-btn > img {
+    width: 12px;
+    height: 12px;
+}
+
+#nav-2 > #account-btn > img {
+    width: 24px;
+    height: 24px;
+}
+
+/*--------------------- Workspace --------------------- */
+
+#workspace {
+    width: 100%;
+    display: flex;
+}
+#workspace > div {
+    /* border: 2px solid red; */
+    height: 90vh;
+}
+
+#side-pane {
+    width: 25%;
+    background-color: #f9f9f9;
+}
+
+#work-pane {
+    width: 75%;
+}
+
+#side-pane-header {
+    width: 94.5%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* box-sizing: border-box; */
+    padding: 8px 10px;
+    border: 1px solid #d5d6d6;
+}
+#side-pane-header > div:nth-child(1) > button {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 12px;
+}
+#side-pane-header > div:nth-child(1) > button:hover {
+    color: #097bed;
+}
+
+#side-pane-header > div:nth-child(2) > button {
+    border: none;
+    background-color: #ededed;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#side-pane-header > div {
+    margin: 5px 0px;
+}
+
+#my-workspace-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#side-pane-body {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+}
+
+/* #side-pane-body > div {
+    border: 2px solid red;
+} */
+
+#side-pane-body-button {
+    width: 100px;
+    border: 1px solid #d5d6d6;
+}
+
+#side-pane-body-button > button {
+    width: 90%;
+    height: 50px;
+    margin: 5%;
+    font-size: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+}
+#side-pane-body-button > button:hover {
+    background-color: #ededed;
+}
+
+#side-pane-body-area {
+    width: 100%;
+    border: 1px solid #d5d6d6;
+}
+
+#work-pane > div {
+    /* border: 1px solid red; */
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#work-title {
+    width: auto;
+    height: 40px;
+    padding-inline: 15px;
+    border: 1px solid #d5d6d6;
+    display: flex;
+    align-items: center;
+}
+#work-title > p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#work-body {
+    border: 1px solid #d5d6d6;
+    height: 40vh;
+}
+
+#work-method {
+    width: 98.44%;
+    height: 35px;
+    padding: 8px;
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+}
+
+#work-method select {
+    height: 100%;
+    width: 100px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #212121;
+    border: 1px solid #e6e6e6;
+    background-color: #f2f2f2;
+    border-radius: 5px 0px 0px 5px;
+    margin-right: 0px;
+}
+
+#work-method input {
+    width: 85%;
+    height: 90%;
+    font-size: 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #f2f2f2;
+    padding-left: 10px;
+    margin-right: 8px;
+}
+
+#work-method button {
+    height: 100%;
+    font-size: 14px;
+    padding-inline: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    background-color: #097bed;
+    color: white;
+    cursor: pointer;
+}
+
+#work-method button:hover {
+    background-color: #0265d2;
+}
+
+#work-data {
+    /* border: 1px solid blue; */
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-inline: 8px;
+    gap: 10px;
+}
+
+#work-data > button {
+    color: #555;
+    height: 90%;
+    cursor: pointer;
+    border: none;
+    /* border: 1px solid black; */
+    background-color: white;
+}
+
+#work-data > button:hover {
+    color: black;
+}
+
+#response-body {
+    height: 41.2vh;
+    border: 1px solid #d5d6d6;
+    padding: 10px;
+}
+#response-body > p {
+    margin: 0px;
+    font-size: 14px;
+    color: #a6a6a6;
+}
+
+
