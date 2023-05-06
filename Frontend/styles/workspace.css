@@ -109,6 +109,54 @@ nav {
     height: 24px;
 }
 
+#account-window {
+
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    text-align: center;
+    width: 250px;
+    height: auto;
+    background-color: white;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    display: none; /* Initially hide the account window */
+}
+
+#account-window > img {
+    width: 70px;
+    height: auto;
+    margin: 10px auto 5px;
+}
+
+#account-window p {
+    margin: 5px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#account-window > button {
+    width: 100%;
+    margin-top: 10px;
+    text-align: left;
+    border: .5px solid grey;
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+#account-window > button:hover {
+    background-color: #f9f9f9;
+    transition: 0.1s;
+}
+
+/* #account-window.hidden {
+    display: none;
+} */
+
 /*--------------------- Workspace --------------------- */
 
 #workspace {
@@ -168,6 +216,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 8px;
+}
+
+#my-workspace-btn > img {
+    width: 12px;
+    height: auto;
 }
 
 #side-pane-body {
@@ -185,7 +239,7 @@ nav {
     border: 1px solid #d5d6d6;
 }
 
-#side-pane-body-button>button {
+#side-pane-body-button > button {
     width: 90%;
     height: 50px;
     margin: 5%;
@@ -193,10 +247,20 @@ nav {
     border: none;
     border-radius: 5px;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-direction: column;
 }
 
 #side-pane-body-button>button:hover {
     background-color: #ededed;
+}
+
+#side-pane-body-button > button > img {
+    width: 15px;
+    height: auto;
 }
 
 #side-pane-body-area {
@@ -298,6 +362,11 @@ nav {
     background-color: #0265d2;
 }
 
+#method option {
+    height: 30px;
+    padding: 5px 0 5px 10px;
+}
+
 #work-data {
     /* border: 1px solid blue; */
     height: 30px;
@@ -321,6 +390,23 @@ nav {
     color: black;
 }
 
+#work-data-inputs {
+    /* border: 2px solid blue; */
+    border: 1px solid #d5d6d6;
+    box-sizing: border-box;
+    height: 29.18vh;
+    padding: 5px;
+}
+
+#work-data-inputs > p {
+    margin: 0px;
+}
+
+#body-input-area {
+    width: 99.5%;
+    height: 97%;
+}
+
 #response-body {
     height: 41.2vh;
     border: 1px solid #d5d6d6;
@@ -331,4 +417,14 @@ nav {
     margin: 0px;
     font-size: 14px;
     color: #a6a6a6;
+}
+
+#dummy-data {
+    margin-top: 70px;
+    text-align: center;
+}
+
+#dummy-data > p {
+    font-size: 14px;
+    color: #6b6b70;
 }
