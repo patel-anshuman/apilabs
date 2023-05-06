@@ -111,6 +111,9 @@ body {
 background-color: rgb(249, 246, 246);
 padding-bottom: 4rem;
 }
+.whatis{
+	padding-bottom: 4rem;	
+}
 .boxtop{
 	display: flex;
 	justify-content: space-between;
@@ -145,6 +148,13 @@ padding-bottom: 4rem;
 	z-index: 1;
 }
 
+.wright{
+	width: 20%;
+	display: flex;
+	justify-content: end;
+
+}
+
 .box4{
 	display: flex;
 	padding: 40px;
@@ -174,6 +184,26 @@ padding-bottom: 4rem;
 	display: flex;
 	justify-content: center;
 }
-.learn button{
+.read button, .learn button{
 	padding: 5px 10px;
 } 
+
+.getinput>input{
+	border: 1px solid orange;
+	padding: 10px 35px 10px 5px;
+	border-radius: 5px 0 0 5px;
+	
+}
+.getinput>button{
+	border: 1px solid rgb(245, 102, 25);
+	border-radius:0  5px 5px 0;
+	padding: 10px;
+	background-color: rgb(245, 102, 25);
+	color: white;
+	margin-left: -8px;
+	font-weight: 600;
+
+}
+.rightw{
+	width: 40%;
+}
