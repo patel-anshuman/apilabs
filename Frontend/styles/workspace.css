@@ -377,7 +377,8 @@ nav {
     gap: 10px;
 }
 
-#work-data>button {
+.tab-content {
+    /* border: 2px solid blue; */
     color: #555;
     height: 90%;
     cursor: pointer;
@@ -386,25 +387,55 @@ nav {
     background-color: white;
 }
 
-#work-data>button:hover {
+.tab {
+    padding: 10px 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+    color:#777;
+    background-color: white;
+    cursor: pointer;
+}
+
+.tab:hover {
     color: black;
 }
 
-#work-data-inputs {
-    /* border: 2px solid blue; */
-    border: 1px solid #d5d6d6;
-    box-sizing: border-box;
-    height: 29.18vh;
-    padding: 5px;
+.tab.active {
+    color: black;
+    border-bottom: 3px solid #e05320;
 }
 
-#work-data-inputs > p {
-    margin: 0px;
+.tab-content {
+    display: none;
+    height: 26.2vh;
+    padding: 10px;
+    border: 1px solid #ccc;
+    /* border: 1px solid blue; */
+}
+
+.tab-content.show {
+    display: block;
+}
+
+.tab-content>table {
+    width: 100%;
+    /* border: 2px solid blue; */
+}
+
+.tab-content>table input {
+    width: 98%;
+}
+
+#tab3 > select {
+    margin-bottom: 5px;
+    padding: 5px 10px;
 }
 
 #body-input-area {
-    width: 99.5%;
-    height: 97%;
+    width: 94.7%;
+    height: 62%;
+    padding: 20px 30px;
 }
 
 #response-body {
