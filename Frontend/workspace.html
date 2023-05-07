@@ -100,12 +100,74 @@
                     <button id="send-btn">Send</button>
                 </div>
                 <div id="work-data">
-                    <button id="params-btn">Params</button>
-                    <button id="auth-btn">Authorization</button>
-                    <button id="headers-btn">Headers</button>
-                    <button id="body-btn">Body</button>
+                    <button class="tab" id="params-btn" onclick="openTab(event, 'tab1')">Params</button>
+                    <button class="tab" id="headers-btn"  onclick="openTab(event, 'tab2')">Headers</button>
+                    <button class="tab" id="body-btn"  onclick="openTab(event, 'tab3')">Body</button>
                 </div>
-                <div id="work-data-inputs">
+                <div id="tab1" class="tab-content" for="params-btn">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Key</td>
+                                <td>Value</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="tab1key1" id="tab1key1" placeholder="Key"></td>
+                                <td><input type="text" name="tab1val1" id="tab1val1" placeholder="Value"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="tab1key2" id="tab1key2" placeholder="Key"></td>
+                                <td><input type="text" name="tab1val2" id="tab1val2" placeholder="Value"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="tab2" class="tab-content" for="headers-btn">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Key</td>
+                                <td>Value</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" name="tab2key1" id="tab2key1" placeholder="Key"></td>
+                                <td><input type="text" name="tab2val1" id="tab2val1" placeholder="Value"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="tab2key2" id="tab2key2" placeholder="Key"></td>
+                                <td><input type="text" name="tab2val2" id="tab2val2" placeholder="Value"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="tab2key3" id="tab2key3" placeholder="Key"></td>
+                                <td><input type="text" name="tab2val3" id="tab2val3" placeholder="Value"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="tab2key4" id="tab2key4" placeholder="Key"></td>
+                                <td><input type="text" name="tab2val4" id="tab2val4" placeholder="Value"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="tab2key5" id="tab2key5" placeholder="Key"></td>
+                                <td><input type="text" name="tab2val5" id="tab2val5" placeholder="Value"></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="tab2key6" id="tab2key6" placeholder="Key"></td>
+                                <td><input type="text" name="tab2val6" id="tab2val6" placeholder="Value"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="tab3" class="tab-content" for="body-btn">
+                    <select name="body-data-type" id="body-data-type">
+                        <option value="text">Text</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="JSON">JSON</option>
+                        <option value="HTML">HTML</option>
+                        <option value="XML">XML</option>
+                    </select>
                     <textarea name="body-input-area" id="body-input-area" cols="100" rows="20"></textarea>
                 </div>
             </div>
@@ -128,5 +190,27 @@
     // accountButton.addEventListener('click', function() {
     //     accountWindow.classList.toggle('hidden');
     // });
+
+    // Input data tabs params, headers, body 
+    function openTab(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tab-content" and hide them
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("show");
+      }
+
+      // Get all elements with class="tab" and remove the class "active"
+      tablinks = document.getElementsByClassName("tab");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).classList.add("show");
+      evt.currentTarget.classList.add("active");
+    }
 </script>
 </html>
