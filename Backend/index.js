@@ -24,6 +24,36 @@ io.on("connection",(socket)=>{
         console.log("User has been disconnected")
     })
 })
+// io.on("connection", (socket) => {
+//     console.log("New user is connected")
+  
+//     // Joining a room for private chat
+//     socket.on("joinRoom", (roomId, userId) => {
+//       socket.join(roomId)
+//       socket.to(roomId).emit("userConnected", userId)
+//       console.log(`User ${userId} joined room ${roomId}`)
+//     })
+  
+//     // Handling private chat messages
+//     socket.on("privateMessage", (data) => {
+//       const { roomId, senderId, receiverId, message } = data
+//       socket.to(roomId).emit("newPrivateMessage", {
+//         senderId,
+//         receiverId,
+//         message,
+//       })
+//     })
+  
+//     // Handling group chat messages
+//     socket.on("groupMessage", (data) => {
+//       const { username, message } = data
+//       socket.broadcast.emit("newGroupMessage", { username, message })
+//     })
+  
+//     socket.on("disconnect", () => {
+//       console.log("User has been disconnected")
+//     })
+//   })
 
 
 server.listen(PORT,()=>{
