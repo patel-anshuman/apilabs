@@ -459,3 +459,13 @@ nav {
     font-size: 14px;
     color: #6b6b70;
 }
+.request-body-input {
+    display: block;
+    width: 100%;
+    height: 150px;
+    padding: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
