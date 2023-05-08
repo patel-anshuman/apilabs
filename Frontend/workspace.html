@@ -1,192 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/apilabs.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/apilabs.png" type="image/x-icon" />
     <title>My Workspace</title>
-    <link rel="stylesheet" href="./styles/workspace.css">
+    <link rel="stylesheet" href="./styles/workspace.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <!------------------------------------ Nav bar ------------------------------------------>
     <nav>
-        <div id="nav-1">
-            <a href="./dashboard.html"><button>Home</button></a>
-            <a href="./workspace.html"><button>Workspaces</button></a>
-            <a href="#"><button>API Network</button></a>
-            <a href="#"><button>Explore</button></a>
-        </div>
-        <div id="search">
-            <button>
-                <img src="./images/navbar/search-normal-1.svg" alt="search-icon">
-                <span>Search APILABS</span>
-            </button>
-        </div>
-        <div id="nav-2">
-            <button id="invite-btn">
-                <img src="./images/navbar/add-group.png" alt="invite-icon">
-                <span>Invite</span>
-            </button>
-            <button id="settings-btn">
-                <img src="./images/navbar/setting.png" alt="settings-icon">
-            </button>
-            <button id="notification-btn">
-                <img src="./images/navbar/notification.png" alt="notifications-icon">
-            </button>
-            <button id="account-btn">
-                <img src="./images/navbar/account.png" alt="manage-accounts-icon">
-            </button>
-        </div>
+      <div id="nav-1">
+        <a href="./dashboard.html"><button>Home</button></a>
+        <a href="./workspace.html"><button>Workspaces</button></a>
+        <a href="#"><button>API Network</button></a>
+        <a href="#"><button>Explore</button></a>
+      </div>
+      <div id="search">
+        <button>
+          <img src="./images/navbar/search-normal-1.svg" alt="search-icon" />
+          <span>Search APILABS</span>
+        </button>
+      </div>
+      <div id="nav-2">
+        <button id="invite-btn">
+          <img src="./images/navbar/add-group.png" alt="invite-icon" />
+          <span>Invite</span>
+        </button>
+        <button id="settings-btn">
+          <img src="./images/navbar/setting.png" alt="settings-icon" />
+        </button>
+        <button id="notification-btn">
+          <img
+            src="./images/navbar/notification.png"
+            alt="notifications-icon"
+          />
+        </button>
+        <button id="account-btn">
+          <img src="./images/navbar/account.png" alt="manage-accounts-icon" />
+        </button>
+      </div>
     </nav>
 
     <div id="account-window" class="show">
-        <img src="./images/navbar/account.png">
-        <b><p id="user-name">user.name</p></b>
-        <p id="user-email">user@email.com</p>
-        <button>Sign Out</button>
+      <img src="./images/navbar/account.png" />
+      <b><p id="user-name">user.name</p></b>
+      <p id="user-email">user@email.com</p>
+      <button>Sign Out</button>
     </div>
 
     <!------------------------------------ Workspace ------------------------------------------>
     <section id="workspace">
-        <div id="side-pane">
-            <div id="side-pane-header">
-                <div>
-                    <button id="my-workspace-btn">
-                        <img src="./images/workspace/user.png" alt="">
-                        <span>My Workspace</span>
-                    </button>
-                </div>
-                <div>
-                    <button>New</button>
-                    <button>Import</button>
-                </div>
-            </div>
-            <div id="side-pane-body">
-                <div id="side-pane-body-button">
-                    <button>
-                        <img src="./images/workspace/collection.png" alt="">
-                        <span>Collections</span>
-                    </button>
-                    <button>
-                        <img src="./images/workspace/hosting.png" alt="">
-                        <span>Enviroments</span>
-                    </button>
-                    <button>
-                        <img src="./images/workspace/history.png" alt="">
-                        <span>History</span>
-                    </button>
-                    <hr>
-                </div>
-                <div id="side-pane-body-area">
-                    <!-- All requests data appended here by DOM -->
-                </div>
-            </div>
+      <div id="side-pane">
+        <div id="side-pane-header">
+          <div>
+            <button id="my-workspace-btn">
+              <img src="./images/workspace/user.png" alt="" />
+              <span>My Workspace</span>
+            </button>
+          </div>
+          <div>
+            <button>New</button>
+            <button>Import</button>
+          </div>
         </div>
-        <div id="work-pane">
-            <div id="work-title">
-                <p>Untitled Request</p>
-            </div>
-            <div id="work-body">
-                <div id="work-method">
-                    <select name="method" id="method">
-                        <option value="GET">GET</option>
-                        <option value="POST">POST</option>
-                        <option value="PUT">PUT</option>
-                        <option value="PATCH">PATCH</option>
-                        <option value="DELETE">DELETE</option>
-                    </select>
-                    <input type="url" name="url" id="url" placeholder="Enter URL or paste text">
-                    <button id="send-btn">Send</button>
-                    
-                </div>
-                <div id="work-data">
-                    <button class="tab" id="params-btn" onclick="openTab(event, 'tab1')">Params</button>
-                    <button class="tab" id="headers-btn"  onclick="openTab(event, 'tab2')">Headers</button>
-                    <button class="tab" id="body-btn"  onclick="openTab(event, 'tab3')">Body</button>
-                </div>
-                <div id="tab1" class="tab-content" for="params-btn">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Key</td>
-                                <td>Value</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" name="tab1key1" id="tab1key1" placeholder="Key"></td>
-                                <td><input type="text" name="tab1val1" id="tab1val1" placeholder="Value"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="tab1key2" id="tab1key2" placeholder="Key"></td>
-                                <td><input type="text" name="tab1val2" id="tab1val2" placeholder="Value"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="tab2" class="tab-content" for="headers-btn">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>Key</td>
-                                <td>Value</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" name="tab2key1" id="tab2key1" placeholder="Key"></td>
-                                <td><input type="text" name="tab2val1" id="tab2val1" placeholder="Value"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="tab2key2" id="tab2key2" placeholder="Key"></td>
-                                <td><input type="text" name="tab2val2" id="tab2val2" placeholder="Value"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="tab2key3" id="tab2key3" placeholder="Key"></td>
-                                <td><input type="text" name="tab2val3" id="tab2val3" placeholder="Value"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="tab2key4" id="tab2key4" placeholder="Key"></td>
-                                <td><input type="text" name="tab2val4" id="tab2val4" placeholder="Value"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="tab2key5" id="tab2key5" placeholder="Key"></td>
-                                <td><input type="text" name="tab2val5" id="tab2val5" placeholder="Value"></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" name="tab2key6" id="tab2key6" placeholder="Key"></td>
-                                <td><input type="text" name="tab2val6" id="tab2val6" placeholder="Value"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="tab3" class="tab-content" for="body-btn">
-                    <select name="body-data-type" id="body-data-type">
-                        <option value="text">Text</option>
-                        <option value="javascript">JavaScript</option>
-                        <option value="JSON">JSON</option>
-                        <option value="HTML">HTML</option>
-                        <option value="XML">XML</option>
-                    </select>
-                    <textarea name="body-input-area" id="body-input-area" cols="100" rows="20"></textarea>
-                </div>
-            </div>
-            <div id="response-body">
-                <!-- Response data appended here  -->
-                <p>Response</p>
-                <div id="dummy-data">
-                    <img src="https://postman.com/_aether-assets/illustrations/light/illustration-hit-send.svg" alt="">
-                    <p>Enter the URL and click Send to get a response</p>
-                </div>
-            </div>
+        <div id="side-pane-body">
+          <div id="side-pane-body-button">
+            <button>
+              <img src="./images/workspace/collection.png" alt="" />
+              <span>Collections</span>
+            </button>
+            <button>
+              <img src="./images/workspace/hosting.png" alt="" />
+              <span>Enviroments</span>
+            </button>
+            <button>
+              <img src="./images/workspace/history.png" alt="" />
+              <span>History</span>
+            </button>
+            <hr />
+          </div>
+          <div id="side-pane-body-area">
+            <!-- All requests data appended here by DOM -->
+          </div>
         </div>
+      </div>
+      <div id="work-pane">
+        <div id="work-title">
+          <p>Untitled Request</p>
+        </div>
+        <div id="work-body">
+          <div id="work-method">
+            <select name="method" id="method">
+              <option value="GET">GET</option>
+              <option value="POST">POST</option>
+              <option value="PUT">PUT</option>
+              <option value="PATCH">PATCH</option>
+              <option value="DELETE">DELETE</option>
+            </select>
+            <input
+              type="url"
+              name="url"
+              id="url"
+              placeholder="Enter URL or paste text"
+            />
+            <button id="send-btn">Send</button>
+          </div>
+          <div id="work-data">
+            <button
+              class="tab"
+              id="params-btn"
+              onclick="openTab(event, 'tab1')"
+            >
+              Params
+            </button>
+            <button
+              class="tab"
+              id="headers-btn"
+              onclick="openTab(event, 'tab2')"
+            >
+              Headers
+            </button>
+            <button class="tab" id="body-btn" onclick="openTab(event, 'tab3')">
+              Body
+            </button>
+          </div>
+          <div id="tab1" class="tab-content" for="params-btn">
+            <table>
+              <thead>
+                <tr>
+                  <td>Key</td>
+                  <td>Value</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab1key1"
+                      id="tab1key1"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab1val1"
+                      id="tab1val1"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab1key2"
+                      id="tab1key2"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab1val2"
+                      id="tab1val2"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="tab2" class="tab-content" for="headers-btn">
+            <table>
+              <thead>
+                <tr>
+                  <td>Key</td>
+                  <td>Value</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2key1"
+                      id="tab2key1"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2val1"
+                      id="tab2val1"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2key2"
+                      id="tab2key2"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2val2"
+                      id="tab2val2"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2key3"
+                      id="tab2key3"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2val3"
+                      id="tab2val3"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2key4"
+                      id="tab2key4"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2val4"
+                      id="tab2val4"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2key5"
+                      id="tab2key5"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2val5"
+                      id="tab2val5"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2key6"
+                      id="tab2key6"
+                      placeholder="Key"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      type="text"
+                      name="tab2val6"
+                      id="tab2val6"
+                      placeholder="Value"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="tab3" class="tab-content" for="body-btn">
+            <select name="body-data-type" id="body-data-type">
+              <option value="text">Text</option>
+              <option value="javascript">JavaScript</option>
+              <option value="JSON">JSON</option>
+              <option value="HTML">HTML</option>
+              <option value="XML">XML</option>
+            </select>
+            <textarea
+              name="body-input-area"
+              id="body-input-area"
+              cols="100"
+              rows="20"
+            ></textarea>
+          </div>
+        </div>
+        <div id="response-body">
+          <!-- Response data appended here  -->
+          <p>Response</p>
+          <div id="dummy-data">
+            <img
+              src="https://postman.com/_aether-assets/illustrations/light/illustration-hit-send.svg"
+              alt=""
+            />
+            <p>Enter the URL and click Send to get a response</p>
+          </div>
+        </div>
+      </div>
     </section>
-
-</body>
-<script src="./scripts.js"></script>
-<script>
+  </body>
+  <script src="./scripts.js"></script>
+  <script>
     // const accountBtn = document.getElementById('account-btn');
     // const accountWindow = document.getElementById('account-window');
 
@@ -194,7 +334,7 @@
     //     accountWindow.classList.toggle('hidden');
     // });
 
-    // Input data tabs params, headers, body 
+    // Input data tabs params, headers, body
     function openTab(evt, tabName) {
       // Declare all variables
       var i, tabcontent, tablinks;
@@ -216,7 +356,18 @@
       evt.currentTarget.classList.add("active");
     }
 
+    // let responseBody = document.getElementById("response-body");
 
-    
-</script>
+    // document.getElementById("send-btn").addEventListener("click", async () => {
+    //   try {
+    //     let response = await fetch("data.json");
+    //     let jsonData = await response.json();
+    //     var prettyJson = JSON.stringify(jsonData, null, 2);
+    //     responseBody.innerHTML = `<textarea id="json-textarea"></textarea>`;
+    //     document.getElementById("json-textarea").value = prettyJson;
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // });
+  </script>
 </html>
