@@ -7,9 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to APILABS</title>
     <link rel="stylesheet" href="/styles/welcome.css">
+    <link rel="stylesheet" href="./styles/workspace.css">
 </head>
 
 <body>
+    <nav style="position: sticky; top: 0;background-color: white; z-index: 100;">
+        <div id="nav-1">
+            <a href="./dashboard.html"><button>Home</button></a>
+            <a href="./workspace.html"><button>Workspaces</button></a>
+            <a href="#"><button>API Network</button></a>
+            <a href="#"><button>Explore</button></a>
+        </div>
+        <div id="search">
+            <button>
+                <img src="./images/navbar/search-normal-1.svg" alt="search-icon">
+                <span>Search APILABS</span>
+            </button>
+        </div>
+        <div id="nav-2">
+            <button id="invite-btn">
+                <img src="./images/navbar/add-group.png" alt="invite-icon">
+                <span>Invite</span>
+            </button>
+            <button id="settings-btn">
+                <img src="./images/navbar/setting.png" alt="settings-icon">
+            </button>
+            <button id="notification-btn">
+                <img src="./images/navbar/notification.png" alt="notifications-icon">
+            </button>
+            <button id="account-btn">
+                <img src="./images/navbar/account.png" alt="manage-accounts-icon">
+            </button>
+        </div>
+    </nav>
 
 
     <div>
@@ -140,6 +170,133 @@
             </div>
         </div>
 
+        <div class="footer">
+            <div class="footerimg">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjQ0NiIgdmlld0JveD0iMCAwIDMyMCA0NDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF83MzRfMjY4NzYpIj4KPHBhdGggZD0iTTIwMSAzMjcuNVYzNDkuNSIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjEuNyIvPgo8cGF0aCBkPSJNMjMxIDMyNy41VjM0OS41IiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43Ii8+CjxwYXRoIGQ9Ik0yNjIgMzI3LjVWMzQ5LjUiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciLz4KPHBhdGggZD0iTTI0MC41IDIzNy45VjE5MC41SDI4NS41VjM1Ni41SDMyMCIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjEuNyIvPgo8cGF0aCBkPSJNMTgzIDMwMy4xVjM1Ni41SDEzNS41IiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43Ii8+CjxwYXRoIGQ9Ik0yNzggNDQ0LjVIMjg2LjUiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciLz4KPHBhdGggZD0iTTE4NSA0NDQuNUgyNzIiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciLz4KPHBhdGggZD0iTTEzNy44IDE0Ny45QzEzNy44IDE0Ny45IDE1NS40IDE1Mi4xIDE0OS4yIDE4MC41TDEzOC43IDE3Mi4yIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfNzM0XzI2ODc2KSIvPgo8cGF0aCBkPSJNMTA1LjkgMTQ3LjdDMTA1LjkgMTQ3LjcgODguNCAxNTIuOSA5NS44IDE4MUwxMDYuNSAxNzEuOSIgZmlsbD0idXJsKCNwYWludDFfbGluZWFyXzczNF8yNjg3NikiLz4KPHBhdGggZD0iTTEzNy44IDE0Ny45QzEzNy44IDE0Ny45IDE1NS40IDE1Mi4xIDE0OS4yIDE4MC41TDEzOC43IDE3Mi4yIiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz4KPHBhdGggZD0iTTEyMS4xIDEwOEMxMjAuNSAxMDguNCAxMjAgMTA4LjcgMTE5LjQgMTA5QzExMC43IDExNC43IDEwNS45IDEyNC45IDEwNi4xIDEzNS40TDEwNi4zIDE0OC44TDEwNi43IDE3Mi4xSDEyMi41TDEzOC4zIDE3Mi4yTDEzNy44IDE0Ny43TDEzNy42IDEzNUMxMzcuNSAxMzAuMiAxMzYuNCAxMjUuNSAxMzQuMiAxMjEuM0MxMzIgMTE3IDEyOC45IDExMy40IDEyNS4xIDExMC41QzEyMy45IDEwOS43IDEyMS4zIDEwOCAxMjEuMyAxMDhIMTIxLjFaIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjEuNyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik0xMDUuOSAxNDcuN0MxMDUuOSAxNDcuNyA4OC40IDE1Mi45IDk1LjggMTgxTDEwNi41IDE3MS45IiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz4KPHBhdGggb3BhY2l0eT0iMC4zIiBkPSJNMTI3LjMgMTQ0LjZDMTIzLjEgMTQ3LjcgMTE3LjEgMTQ2LjkgMTE0IDE0Mi42QzExMi40IDE0MC40IDExMS44IDEzNy44IDExMi4yIDEzNS40QzExMi40IDEzNi45IDExMyAxMzguMyAxMTQgMTM5LjZDMTE3LjIgMTQzLjggMTIzLjEgMTQ0LjcgMTI3LjMgMTQxLjZDMTI5LjQgMTQwLjEgMTMwLjYgMTM3LjggMTMxIDEzNS41QzEzMS41IDEzOC45IDEzMC4yIDE0Mi40IDEyNy4zIDE0NC42WiIgZmlsbD0iIzI2MjYyNiIvPgo8cGF0aCBkPSJNMTI3LjMgMTQxLjZDMTMxLjUgMTM4LjUgMTMyLjQgMTMyLjUgMTI5LjIgMTI4LjNDMTI2IDEyNC4xIDEyMC4xIDEyMy4yIDExNS45IDEyNi4zQzExMS43IDEyOS40IDExMC44IDEzNS40IDExNCAxMzkuNkMxMTcuMSAxNDMuOSAxMjMuMSAxNDQuOCAxMjcuMyAxNDEuNloiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPgo8cGF0aCBkPSJNMTMyIDE3Mi44SDExMC44VjE3Ni43SDEzMlYxNzIuOFoiIGZpbGw9IiNDNEM0QzQiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciLz4KPHBhdGggZD0iTTEzMiAxNjNIMTI3VjE2N0gxMzJWMTYzWiIgZmlsbD0iI0M0QzRDNCIvPgo8cGF0aCBkPSJNMTI0IDE2M0gxMjJWMTY3SDEyNFYxNjNaIiBmaWxsPSIjQzRDNEM0Ii8+CjxwYXRoIGQ9Ik0xMTggMTc3TDEwOC4yIDM5OC43SDEwMy42QzkwLjEgMzk4LjcgNzkuMiA0MDkuOSA3OS41IDQyMy40Qzc5LjUgNDIzLjcgNzkuMyA0MjQgNzguOSA0MjRDNjkuNSA0MjQuMiA2MiA0MzEuOSA2MiA0NDEuM1Y0NDQuOSIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjEuNyIvPgo8cGF0aCBkPSJNMTI1LjkgMTc2LjdMMTM4LjUgNDE0SDE1NEMxNzEuMSA0MTQgMTg1IDQyNy45IDE4NSA0NDUiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciLz4KPHBhdGggZD0iTTExMyAyNzFIMjRWNDE1LjVIMCIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjEuNyIvPgo8cGF0aCBkPSJNMjU5LjIgMjM3LjlIMTY2LjlWMzAzLjJIMjU5LjJWMjM3LjlaIiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43Ii8+CjxwYXRoIGQ9Ik0yMzEgMjgxVjI2MUwyMTMuNSAyNTFMMTk2IDI2MVYyODFMMjEzLjUgMjkxTDIzMSAyODFaIiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik00MiAzNjJWMzkxLjVINjEuNVYzNjJINDJaIiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43Ii8+CjxwYXRoIGQ9Ik00MiAzMDJWMzMxLjVINjEuNVYzMDJINDJaIiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43Ii8+CjxwYXRoIGQ9Ik0yMTYuOSAyNDcuMkMyMTIuNCAyNDYuNiAyMDcuOCAyNDcuNCAyMDMuNyAyNDkuNEMxOTkuNiAyNTEuNCAxOTYuMiAyNTQuNiAxOTQgMjU4LjZDMTkxLjcgMjYyLjUgMTkwLjcgMjY3LjEgMTkxIDI3MS42QzE5MS4zIDI3Ni4xIDE5MyAyODAuNSAxOTUuNyAyODQuMUMxOTguNSAyODcuNyAyMDIuMyAyOTAuNCAyMDYuNiAyOTEuOEMyMTAuOSAyOTMuMiAyMTUuNiAyOTMuNCAyMTkuOSAyOTIuMkMyMjQuMyAyOTEgMjI4LjIgMjg4LjUgMjMxLjIgMjg1LjFDMjM0LjIgMjgxLjcgMjM2LjEgMjc3LjQgMjM2LjcgMjcyLjlDMjM3LjUgMjY2LjkgMjM1LjggMjYwLjcgMjMyLjEgMjU1LjlDMjI4LjUgMjUxLjEgMjIzIDI0OCAyMTYuOSAyNDcuMloiIGZpbGw9IiNGRjZDMzciLz4KPHBhdGggZD0iTTIwNy42IDI3MS41QzIwNy42IDI3MS41IDIwNy43IDI3MS41IDIwNy42IDI3MS41QzIwNy43IDI3MS41IDIwNy43IDI3MS42IDIwNy43IDI3MS41TDIxMS40IDI3MC43TDIwOS45IDI2OS4xTDIwNy43IDI3MS4zQzIwNy42IDI3MS40IDIwNy42IDI3MS40IDIwNy42IDI3MS41QzIwNy42IDI3MS40IDIwNy42IDI3MS40IDIwNy42IDI3MS41WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIyNC45IDI1NS43QzIyNC40IDI1NS43IDIyMy45IDI1NS44IDIyMy40IDI1NkMyMjIuOSAyNTYuMiAyMjIuNSAyNTYuNSAyMjIuMiAyNTYuOUMyMjEuOSAyNTcuMyAyMjEuNyAyNTcuOCAyMjEuNSAyNTguM0MyMjEuMyAyNTguOCAyMjEuNCAyNTkuMyAyMjEuNSAyNTkuOEMyMjEuNiAyNjAuMyAyMjEuOCAyNjAuOCAyMjIuMSAyNjEuMkMyMjIuNCAyNjEuNiAyMjIuOCAyNjEuOSAyMjMuMyAyNjIuMkMyMjMuOCAyNjIuNCAyMjQuMyAyNjIuNSAyMjQuOCAyNjIuNkMyMjUuMyAyNjIuNiAyMjUuOCAyNjIuNSAyMjYuMyAyNjIuM0wyMjQgMjYwQzIyNCAyNjAgMjI0IDI1OS45IDIyMy45IDI1OS45VjI1OS44VjI1OS43QzIyMy45IDI1OS43IDIyMy45IDI1OS42IDIyNCAyNTkuNkwyMjcgMjU2LjZDMjI2LjQgMjU1LjkgMjI1LjYgMjU1LjYgMjI0LjkgMjU1LjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjI3LjQgMjU2LjhMMjI0LjUgMjU5LjZMMjI2LjcgMjYxLjhDMjI2LjkgMjYxLjcgMjI3IDI2MS42IDIyNy4yIDI2MS40QzIyNy44IDI2MC44IDIyOC4yIDI2MCAyMjguMiAyNTkuMUMyMjguMyAyNTguMyAyMjggMjU3LjUgMjI3LjQgMjU2LjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjIxLjcgMjYyLjFDMjIxLjYgMjYyLjEgMjIxLjUgMjYyLjEgMjIxLjUgMjYyLjFDMjIxLjQgMjYyLjEgMjIxLjQgMjYyLjEgMjIxLjMgMjYyLjJDMjIxLjMgMjYyLjIgMjIxLjIgMjYyLjIgMjIxLjIgMjYyLjNIMjIxLjFDMjIxIDI2Mi4zIDIyMSAyNjIuNCAyMjAuOSAyNjIuNEwyMTIuNCAyNzAuOUwyMTMuNCAyNzEuOUwyMjIuNCAyNjRDMjIyLjUgMjY0IDIyMi41IDI2My45IDIyMi41IDI2My45VjI2My44TDIyMi42IDI2My43VjI2My42VjI2My41VjI2My40QzIyMi42IDI2My4zIDIyMi42IDI2My4zIDIyMi42IDI2My4yVjI2My4xVjI2M1YyNjIuOUMyMjIuNiAyNjIuNyAyMjIuNSAyNjIuNSAyMjIuMyAyNjIuM0MyMjIuMSAyNjIuMSAyMjEuOSAyNjIgMjIxLjcgMjYyQzIyMS44IDI2Mi4xIDIyMS44IDI2Mi4xIDIyMS43IDI2Mi4xWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIxMC4zIDI2OC43TDIxMiAyNzAuNEwyMjAuNSAyNjEuOUMyMjAuOCAyNjEuNiAyMjEuMSAyNjEuNSAyMjEuNSAyNjEuNEMyMjAgMjYwLjMgMjE4LjQgMjYwLjYgMjEwLjMgMjY4LjdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjIyLjkgMjY0LjRMMjIyLjggMjY0LjVMMjEzLjggMjcyLjRMMjE1LjMgMjczLjlDMjE5LjIgMjcwLjMgMjIyLjUgMjY2LjkgMjIyLjkgMjY0LjRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjAwLjUgMjgyLjhDMjAwLjYgMjgyLjggMjAwLjYgMjgyLjggMjAwLjUgMjgyLjhDMjAwLjYgMjgyLjkgMjAwLjYgMjgyLjkgMjAwLjUgMjgyLjhMMjA0LjUgMjgzLjFMMjAyLjMgMjgwLjlMMjAwLjUgMjgyLjhDMjAwLjUgMjgyLjcgMjAwLjYgMjgyLjcgMjAwLjUgMjgyLjhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjAyLjggMjgwLjVMMjA1LjEgMjgyLjhDMjA1LjEgMjgyLjggMjA1LjIgMjgyLjggMjA1LjIgMjgyLjlIMjA1LjNDMjA1LjMgMjgyLjkgMjA1LjQgMjgyLjkgMjA1LjQgMjgyLjhWMjgyLjdMMjA1IDI4MUMyMDUgMjgwLjkgMjA1IDI4MC44IDIwNSAyODAuN0MyMDUgMjgwLjYgMjA1LjEgMjgwLjUgMjA1LjIgMjgwLjVDMjA5LjMgMjc4LjUgMjEyLjUgMjc2LjQgMjE0LjkgMjc0LjNMMjEzLjMgMjcyLjdMMjA5LjkgMjczLjRMMjAyLjggMjgwLjVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMjEyLjkgMjcyLjFMMjEyIDI3MS4yTDIxMC44IDI3Mi40TDIxMi45IDI3Mi4xWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIyNy41IDI1OC43QzIyNy41IDI1OC42IDIyNy41IDI1OC42IDIyNy41IDI1OC43QzIyNy40IDI1OC42IDIyNy40IDI1OC42IDIyNy40IDI1OC41SDIyNy4zSDIyNy4yQzIyNy4yIDI1OC41IDIyNy4xIDI1OC41IDIyNy4xIDI1OC42QzIyNy4xIDI1OC42IDIyNy4xIDI1OC43IDIyNyAyNTguN1YyNTguOFYyNTguOUMyMjcuMSAyNTkgMjI3LjEgMjU5LjIgMjI3LjEgMjU5LjNDMjI3LjEgMjU5LjUgMjI3IDI1OS42IDIyNi45IDI1OS43TDIyNi44IDI1OS44VjI1OS45TDIyNi45IDI2MEgyMjdIMjI3LjFDMjI3LjEgMjYwIDIyNy4yIDI2MCAyMjcuMiAyNTkuOUMyMjcuNCAyNTkuNyAyMjcuNSAyNTkuNSAyMjcuNSAyNTkuMkMyMjcuNyAyNTkuMSAyMjcuNiAyNTguOSAyMjcuNSAyNTguN1oiIGZpbGw9IiNGRjZDMzciLz4KPHBhdGggZD0iTTE5NCAxNjJMMTg3IDE2NC4zTDE5NCAxNjYuNkwxOTYuMyAxNzMuNkwxOTguNiAxNjYuNkwyMDUuNiAxNjQuM0wxOTguNiAxNjJMMTk2LjMgMTU1TDE5NCAxNjJaIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjNUI1QjVCIiBzdHJva2Utd2lkdGg9IjEuNyIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIi8+CjxwYXRoIGQ9Ik00NCA3MkwzNyA3NC4zTDQ0IDc2LjZMNDYuMyA4My42TDQ4LjYgNzYuNkw1NS42IDc0LjNMNDguNiA3Mkw0Ni4zIDY1TDQ0IDcyWiIgZmlsbD0id2hpdGUiIHN0cm9rZT0iIzVCNUI1QiIgc3Ryb2tlLXdpZHRoPSIxLjciIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPgo8cGF0aCBkPSJNMTYxLjEgNy4xTDE1NyA4LjVMMTYxLjEgOS45TDE2Mi41IDE0TDE2My45IDkuOUwxNjggOC41TDE2My45IDcuMUwxNjIuNSAzTDE2MS4xIDcuMVoiIGZpbGw9IndoaXRlIiBzdHJva2U9IiM1QjVCNUIiIHN0cm9rZS13aWR0aD0iMS43IiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiLz4KPC9nPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzczNF8yNjg3NiIgeDE9IjE0NC4xMSIgeTE9IjE0Ny44ODIiIHgyPSIxNDQuMTEiIHkyPSIxODAuNDM0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNGRjcxMDMiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjRjJBNTI4Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQxX2xpbmVhcl83MzRfMjY4NzYiIHgxPSIxMDAuMjU5IiB5MT0iMTQ3LjczNiIgeDI9IjEwMC4yNTkiIHkyPSIxODEuMDYiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGNzEwMyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGMkE1MjgiLz4KPC9saW5lYXJHcmFkaWVudD4KPGNsaXBQYXRoIGlkPSJjbGlwMF83MzRfMjY4NzYiPgo8cmVjdCB3aWR0aD0iMzIwIiBoZWlnaHQ9IjQ0NiIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K"
+                    alt="postman" loading="lazy" width="152px" height="228px" class="api-platform-image">
+                <div><span class="imgtext">@ 2023 APILABs, Inc </span></div>
+            </div>
+
+            <div>
+                <h2>Products</h2>
+                <div class="footerlist"><a href="https://www.postman.com/product/what-is-postman/" class="footer-link">
+                        <div><span class="footertext">What is
+                                Postman?</span></div>
+                    </a><a href="https://www.postman.com/product/api-repository/" class="footer-link">
+                        <div><span class="footertext">API
+                                Repository</span></div>
+                    </a><a href="https://www.postman.com/product/tools/" class="footer-link">
+                        <div><span class="footertext">Tools</span></div>
+                    </a><a href="https://www.postman.com/product/governance/" class="footer-link">
+                        <div><span class="footertext">Governance</span>
+                        </div>
+                    </a><a href="https://www.postman.com/product/workspaces/" class="footer-link">
+                        <div><span class="footertext">Workspace</span>
+                        </div>
+                    </a><a href="https://www.postman.com/product/integrations/" class="footer-link">
+                        <div><span class="footertext">Integrations</span>
+                        </div>
+                    </a><a href="https://www.postman.com/postman-enterprise/" class="footer-link">
+                        <div><span class="footertext">Enterprise</span>
+                        </div>
+                    </a><a href="https://www.postman.com/pricing/" class="footer-link">
+                        <div><span class="footertext">Plans and
+                                pricing</span></div>
+                    </a><a href="https://www.postman.com/downloads/" class="footer-link">
+                        <div><span class="footertext">Download the
+                                app</span></div>
+                    </a><a href="https://www.postman.com/support/" class="footer-link">
+                        <div><span class="footertext">Support
+                                center</span></div>
+                    </a></div>
+            </div>
+            <div>
+                <h2>Company</h2>
+                <div class="footerlist"><a href="https://www.postman.com/product/what-is-postman/" class="footer-link">
+                        <div><span class="footertext">About</span></div>
+                    </a><a href="https://www.postman.com/product/api-repository/" class="footer-link">
+                        <div><span class="footertext">Careers and culture</span></div>
+                    </a><a href="https://www.postman.com/product/tools/" class="footer-link">
+                        <div><span class="footertext">Press and culture</span></div>
+                    </a><a href="https://www.postman.com/product/governance/" class="footer-link">
+                        <div><span class="footertext">Contact us</span>
+                        </div>
+                    </a><a href="https://www.postman.com/product/workspaces/" class="footer-link">
+                        <div><span class="footertext">Partner program</span>
+                        </div>
+                    </a>
+                </div>
+                <h2>Security and terms</h2>
+                <div>
+                    <a href="https://www.postman.com/product/integrations/" class="footer-link">
+                        <div><span class="footertext">Trust and security</span>
+                        </div>
+                    </a><a href="https://www.postman.com/postman-enterprise/" class="footer-link">
+                        <div><span class="footertext">Privacy and policy</span>
+                        </div>
+                    </a><a href="https://www.postman.com/pricing/" class="footer-link">
+                        <div><span class="footertext">Terms</span></div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2>API categories</h2>
+                <div class="footerlist"><a href="https://www.postman.com/product/what-is-postman/" class="footer-link">
+                        <div><span class="footertext">Database</span></div>
+                    </a><a href="https://www.postman.com/product/api-repository/" class="footer-link">
+                        <div><span class="footertext">App security</span></div>
+                    </a><a href="https://www.postman.com/product/tools/" class="footer-link">
+                        <div><span class="footertext">Payment</span></div>
+                    </a><a href="https://www.postman.com/product/governance/" class="footer-link">
+                        <div><span class="footertext">Financial service</span>
+                        </div>
+                    </a><a href="https://www.postman.com/product/workspaces/" class="footer-link">
+                        <div><span class="footertext">DevOps</span>
+                        </div>
+                    </a><a href="https://www.postman.com/product/integrations/" class="footer-link">
+                        <div><span class="footertext">Developer productivity</span>
+                        </div>
+                    </a><a href="https://www.postman.com/postman-enterprise/" class="footer-link">
+                        <div><span class="footertext">Data analytics</span>
+                        </div>
+                    </a><a href="https://www.postman.com/pricing/" class="footer-link">
+                        <div><span class="footertext">Communication</span></div>
+                    </a><a href="https://www.postman.com/downloads/" class="footer-link">
+                        <div><span class="footertext">Artificial Intellegence</span></div>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h2>Social</h2>
+                <div class="socialbox"><a href="https://twitter.com/getpostman" class="footer-link">
+                        <div class="Flex__StyledFlex-hyfpms-0 bMLMog  "><img
+                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUuMDMxNjggMTQuNTEyMUMxMS4wNjk0IDE0LjUxMjEgMTQuMzcxOCA5LjUwOTgyIDE0LjM3MTggNS4xNzE5QzE0LjM3MTggNS4wMjk4MiAxNC4zNzE4IDQuODg4MzggMTQuMzYyMiA0Ljc0NzU4QzE1LjAwNDcgNC4yODI4OCAxNS41NTkzIDMuNzA3NSAxNiAzLjA0ODM4QzE1LjQwMDkgMy4zMTM4NSAxNC43NjUzIDMuNDg3OTUgMTQuMTE0NiAzLjU2NDg2QzE0Ljc5OTggMy4xNTQ2MSAxNS4zMTI3IDIuNTA5MzYgMTUuNTU3OCAxLjc0OTE4QzE0LjkxMzQgMi4xMzE1NSAxNC4yMDg0IDIuNDAxMDMgMTMuNDczMyAyLjU0NTk4QzEyLjk3ODMgMi4wMTk3IDEyLjMyMzcgMS42NzEyMSAxMS42MTA4IDEuNTU0NDRDMTAuODk3OCAxLjQzNzY3IDEwLjE2NjMgMS41NTkxMyA5LjUyOTMxIDEuOTAwMDJDOC44OTIzNCAyLjI0MDkxIDguMzg1NDggMi43ODIyMyA4LjA4NzE2IDMuNDQwMjFDNy43ODg4NCA0LjA5ODIgNy43MTU2OSA0LjgzNjE2IDcuODc5MDQgNS41Mzk5QzYuNTczOTIgNS40NzQ0NyA1LjI5NzE1IDUuMTM1MzEgNC4xMzE2MSA0LjU0NDQ0QzIuOTY2MDcgMy45NTM1NiAxLjkzNzgyIDMuMTI0MTkgMS4xMTM2IDIuMTEwMTRDMC42OTM4MTkgMi44MzI4MSAwLjU2NTI0OCAzLjY4ODI5IDAuNzU0MDY2IDQuNTAyNDJDMC45NDI4ODUgNS4zMTY1NSAxLjQzNDg5IDYuMDI4MTEgMi4xMjk5MiA2LjQ5MjIyQzEuNjA3NTEgNi40NzY3NCAxLjA5NjUgNi4zMzU4MSAwLjY0IDYuMDgxMzRDMC42NCA2LjA5NDc4IDAuNjQgNi4xMDg4NiAwLjY0IDYuMTIyOTRDMC42NDAyMDcgNi44ODA4NCAwLjkwMjU2NyA3LjYxNTM0IDEuMzgyNTggOC4yMDE4NUMxLjg2MjU5IDguNzg4MzYgMi41MzA3MSA5LjE5MDc4IDMuMjczNiA5LjM0MDg2QzIuNzkwMzIgOS40NzI2NiAyLjI4MzI1IDkuNDkxOTMgMS43OTEzNiA5LjM5NzE4QzIuMDAxMTMgMTAuMDQ5NCAyLjQwOTUxIDEwLjYxOTggMi45NTk0MSAxMS4wMjg2QzMuNTA5MyAxMS40MzczIDQuMTczMTkgMTEuNjY0IDQuODU4MjQgMTEuNjc2OUMzLjY5NTgzIDEyLjU5MDQgMi4yNTk4OCAxMy4wODYzIDAuNzgxNDQgMTMuMDg0OUMwLjUyMDI1OCAxMy4wODQ0IDAuMjU5MzMxIDEzLjA2ODUgMCAxMy4wMzc1QzEuNTAxMjEgMTQuMDAwOSAzLjI0Nzk0IDE0LjUxMTkgNS4wMzE2OCAxNC41MDk1IiBmaWxsPSIjMURBMUYyIi8+Cjwvc3ZnPgo="
+                                class="social-icon"><span class="socialtext">Twitter</span>
+                        </div>
+                    </a><a href="https://www.linkedin.com/company/postman-platform" target="_self"
+                        rel="noopener noreferrer" class="footer-link">
+                        <div class="Flex__StyledFlex-hyfpms-0 bMLMog  "><img
+                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMS41NTU2NiIgeT0iMS42NDQ1MyIgd2lkdGg9IjEyLjg4ODkiIGhlaWdodD0iMTIuNjIyMiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTEzLjI1NzEgMTMuMjU3NEgxMS4wNDQ1VjkuNzkyMThDMTEuMDQ0NSA4Ljk2NTg3IDExLjAyOTcgNy45MDIxNSA5Ljg5MzY1IDcuOTAyMTVDOC43NDEyMiA3LjkwMjE1IDguNTY0OSA4LjgwMjQ1IDguNTY0OSA5LjczMjAzVjEzLjI1NzJINi4zNTIyNVY2LjEzMTI3SDguNDc2NFY3LjEwNTFIOC41MDYxM0M4LjcxODcxIDYuNzQxNjMgOS4wMjU4OSA2LjQ0MjYxIDkuMzk0OTUgNi4yMzk5MUM5Ljc2NDAyIDYuMDM3MjEgMTAuMTgxMiA1LjkzODQgMTAuNjAxOSA1Ljk1NDAyQzEyLjg0NDUgNS45NTQwMiAxMy4yNTggNy40MjkxNyAxMy4yNTggOS4zNDgyNkwxMy4yNTcxIDEzLjI1NzRaTTMuODU1NjQgNS4xNTcyMUMzLjYwMTY4IDUuMTU3MjUgMy4zNTM0MSA1LjA4MTk5IDMuMTQyMjMgNC45NDA5M0MyLjkzMTA1IDQuNzk5ODcgMi43NjY0NCA0LjU5OTM2IDIuNjY5MjEgNC4zNjQ3NEMyLjU3MTk4IDQuMTMwMTMgMi41NDY1MSAzLjg3MTk1IDIuNTk2MDEgMy42MjI4NUMyLjY0NTUxIDMuMzczNzYgMi43Njc3NiAzLjE0NDkzIDIuOTQ3MyAyLjk2NTMyQzMuMTI2ODQgMi43ODU3MSAzLjM1NTYxIDIuNjYzMzcgMy42MDQ2OCAyLjYxMzc4QzMuODUzNzUgMi41NjQxOSA0LjExMTkzIDIuNTg5NTcgNC4zNDY1NyAyLjY4NjcyQzQuNTgxMjIgMi43ODM4NiA0Ljc4MTc4IDIuOTQ4NDEgNC45MjI5MSAzLjE1OTU1QzUuMDY0MDQgMy4zNzA2OSA1LjEzOTM5IDMuNjE4OTQgNS4xMzk0NCAzLjg3MjlDNS4xMzk0NyA0LjA0MTUzIDUuMTA2MjkgNC4yMDg1MSA1LjA0MTc5IDQuMzY0MzJDNC45NzcyOSA0LjUyMDEyIDQuODgyNzMgNC42NjE2OSA0Ljc2MzUyIDQuNzgwOTVDNC42NDQzMSA0LjkwMDIxIDQuNTAyNzcgNC45OTQ4MiA0LjM0NyA1LjA1OTM4QzQuMTkxMjMgNS4xMjM5NCA0LjAyNDI2IDUuMTU3MTggMy44NTU2NCA1LjE1NzIxWk00Ljk2MTk3IDEzLjI1NzRIMi43NDcwMVY2LjEzMTI3SDQuOTYxOTdWMTMuMjU3NFpNMTQuMzYwMiAwLjUzNDIySDEuNjM1MTVDMS4zNDYzMyAwLjUzMDk2MSAxLjA2ODAzIDAuNjQyNTA0IDAuODYxMzk5IDAuODQ0MzRDMC42NTQ3NzMgMS4wNDYxOCAwLjUzNjcyOCAxLjMyMTc5IDAuNTMzMjAzIDEuNjEwNjJWMTQuMzg4OUMwLjUzNjYwNyAxNC42Nzc5IDAuNjU0NTc3IDE0Ljk1MzcgMC44NjExOTYgMTUuMTU1N0MxLjA2NzgyIDE1LjM1NzggMS4zNDYxOCAxNS40Njk1IDEuNjM1MTUgMTUuNDY2NUgxNC4zNjAyQzE0LjY0OTcgMTUuNDcwMSAxNC45Mjg5IDE1LjM1ODYgMTUuMTM2MyAxNS4xNTY2QzE1LjM0MzggMTQuOTU0NiAxNS40NjI1IDE0LjY3ODQgMTUuNDY2NSAxNC4zODg5VjEuNjA5N0MxNS40NjI0IDEuMzIwMyAxNS4zNDM2IDEuMDQ0MzcgMTUuMTM2MSAwLjg0MjUzN0MxNC45Mjg3IDAuNjQwNzA3IDE0LjY0OTYgMC41Mjk0ODEgMTQuMzYwMiAwLjUzMzI5OCIgZmlsbD0iIzBBNjZDMiIvPgo8L3N2Zz4K"
+                                class="social-icon"><span class="socialtext">LinkedIn</span>
+                        </div>
+                    </a><a href="https://github.com/postmanlabs" class="footer-link">
+                        <div class="Flex__StyledFlex-hyfpms-0 bMLMog  "><img
+                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03Ljk5OTI2IDAuMjIyMTY4QzMuNTgyMTggMC4yMjIxNjggMCAzLjgwMjcgMCA4LjIxOTgxQzAgMTEuNzUzMiAyLjI5MjAzIDE0Ljc1MDUgNS40NzEwMSAxNS44MDhDNS44NzEyNyAxNS44ODE2IDYuMDE3MTMgMTUuNjM0NyA2LjAxNzEzIDE1LjQyMjZDNi4wMTcxMyAxNS4yMzMxIDYuMDEwMjUgMTQuNzI5OSA2LjAwNjMyIDE0LjA2MjdDMy43ODEwOSAxNC41NDU4IDMuMzExNTggMTIuOTkwNCAzLjMxMTU4IDEyLjk5MDRDMi45NDc2NyAxMi4wNjY0IDIuNDIzMTYgMTEuODIwNSAyLjQyMzE2IDExLjgyMDVDMS42OTY4IDExLjMyNDYgMi40NzgxNiAxMS4zMzQ0IDIuNDc4MTYgMTEuMzM0NEMzLjI4MTEzIDExLjM5MDkgMy43MDM0OSAxMi4xNTg3IDMuNzAzNDkgMTIuMTU4N0M0LjQxNzA4IDEzLjM4MDcgNS41NzYxMSAxMy4wMjc3IDYuMDMxODYgMTIuODIzQzYuMTA0NTUgMTIuMzA2NSA2LjMxMTMxIDExLjk1NCA2LjUzOTY3IDExLjc1NDJDNC43NjMzMSAxMS41NTI0IDIuODk1NjEgMTAuODY2MSAyLjg5NTYxIDcuODAxNTJDMi44OTU2MSA2LjkyODYgMy4yMDc0NyA2LjIxNDI2IDMuNzE5MjEgNS42NTU1NkMzLjYzNjcgNS40NTMyOCAzLjM2MjE3IDQuNjM5NzcgMy43OTc3OCAzLjUzOTA1QzMuNzk3NzggMy41MzkwNSA0LjQ2OTE0IDMuMzI0MDIgNS45OTc0OCA0LjM1ODk1QzYuNjM1NDQgNC4xODEyMiA3LjMyMDA1IDQuMDkyODUgOC4wMDAyNSA0LjA4OTQxQzguNjc5OTUgNC4wOTI4NSA5LjM2NDA3IDQuMTgxMjIgMTAuMDAzIDQuMzU4OTVDMTEuNTMwNCAzLjMyNDAyIDEyLjIwMDcgMy41MzkwNSAxMi4yMDA3IDMuNTM5MDVDMTIuNjM3MyA0LjYzOTc3IDEyLjM2MjggNS40NTMyOCAxMi4yODA4IDUuNjU1NTZDMTIuNzkzNSA2LjIxNDI2IDEzLjEwMjkgNi45Mjg2IDEzLjEwMjkgNy44MDE1MkMxMy4xMDI5IDEwLjg3MzkgMTEuMjMyMyAxMS41NSA5LjQ1MDUxIDExLjc0NzhDOS43MzczMiAxMS45OTQ4IDkuOTkzMTkgMTIuNDgyOCA5Ljk5MzE5IDEzLjIyOUM5Ljk5MzE5IDE0LjI5NzggOS45ODMzNiAxNS4xNjA0IDkuOTgzMzYgMTUuNDIyNkM5Ljk4MzM2IDE1LjYzNjcgMTAuMTI3OCAxNS44ODU2IDEwLjUzMzQgMTUuODA3NUMxMy43MDk5IDE0Ljc0NzUgMTYgMTEuNzUyMiAxNiA4LjIxOTgxQzE2IDMuODAyNyAxMi40MTc4IDAuMjIyMTY4IDcuOTk5MjYgMC4yMjIxNjgiIGZpbGw9IiMxNjE1MTQiLz4KPC9zdmc+Cg=="
+                                class="social-icon"><span class="socialtext">Github</span></div>
+                    </a><a href="https://www.youtube.com/postman" class="footer-link">
+                        <div class="Flex__StyledFlex-hyfpms-0 bMLMog  "><img
+                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjY2NTcgNC4xMTU3MkMxNS40ODE3IDMuNDIyODYgMTQuOTM5NiAyLjg3NzIgMTQuMjUxMSAyLjY5MjAxQzEzLjAwMzQgMi4zNTU0NyA4IDIuMzU1NDcgOCAyLjM1NTQ3QzggMi4zNTU0NyAyLjk5NjY3IDIuMzU1NDcgMS43NDg5NCAyLjY5MjAxQzEuMDYwNDMgMi44NzcyIDAuNTE4MTgzIDMuNDIyODYgMC4zMzQyOTYgNC4xMTU3MkMwIDUuMzcxNTYgMCA3Ljk5MTg2IDAgNy45OTE4NkMwIDcuOTkxODYgMCAxMC42MTIgMC4zMzQyOTYgMTEuODY4QzAuNTE4MTgzIDEyLjU2MDkgMS4wNjA0MyAxMy4xMDY1IDEuNzQ4ODcgMTMuMjkxOEMyLjk5NjYgMTMuNjI4MyA3Ljk5OTkzIDEzLjYyODMgNy45OTk5MyAxMy42MjgzQzcuOTk5OTMgMTMuNjI4MyAxMy4wMDMzIDEzLjYyODMgMTQuMjUxIDEzLjI5MThDMTQuOTM5NSAxMy4xMDY1IDE1LjQ4MTYgMTIuNTYwOSAxNS42NjU2IDExLjg2ODFDMTYgMTAuNjEyMSAxNiA3Ljk5MTkzIDE2IDcuOTkxOTNDMTYgNy45OTE5MyAxNiA1LjM3MTYzIDE1LjY2NTYgNC4xMTU3OSIgZmlsbD0iI0ZGMDAwMCIvPgo8cGF0aCBkPSJNNi4zNjM3NyAxMC4zNzA4TDEwLjU0NTYgNy45OTE5NEw2LjM2Mzc3IDUuNjEyNzlWMTAuMzcwOFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
+                                class="social-icon"><span class="socialtext">YouTube</span>
+                        </div>
+                    </a><a href="https://www.twitch.tv/getpostman" class="footer-link">
+                        <div class="Flex__StyledFlex-hyfpms-0 bMLMog  "><img
+                                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMjY2NzYgMC41MzMyMDNMMS42MDAxIDMuMTk5ODdWMTIuNzk5OUg0LjgwMDFWMTUuNDY2NUw3LjQ2Njc2IDEyLjc5OTlIOS42MDAxTDE0LjQwMDEgNy45OTk4N1YwLjUzMzIwM0g0LjI2Njc2Wk0xMy4zMzM0IDcuNDY2NTRMMTEuMjAwMSA5LjU5OTg3SDkuMDY2NzZMNy4yMDAxIDExLjQ2NjVWOS41OTk4N0g0LjgwMDFWMS41OTk4N0gxMy4zMzM0VjcuNDY2NTRaIiBmaWxsPSIjOTE0NkZGIi8+CjxwYXRoIGQ9Ik0xMS43MzMyIDMuNDY2OEgxMC42NjY1VjYuNjY2NzlIMTEuNzMzMlYzLjQ2NjhaIiBmaWxsPSIjOTE0NkZGIi8+CjxwYXRoIGQ9Ik04LjgwMDA1IDMuNDY2OEg3LjczMzRWNi42NjY3OUg4LjgwMDA1VjMuNDY2OFoiIGZpbGw9IiM5MTQ2RkYiLz4KPC9zdmc+Cg=="
+                                class="social-icon"><span class="socialtext">Twitch</span></div>
+                    </a></div>
+            </div>
+
+
+        </div>
     </div>
 </body>
 

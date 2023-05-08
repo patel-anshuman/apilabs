@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+	flex-wrap: wrap;
 }
 body {
 	/* background: #149cbe; */
@@ -163,7 +164,7 @@ padding-bottom: 4rem;
 }
 .box{
 	background-color: white;
-	width: 20%;
+	width: 19%;
 	padding: 1.5rem;
 }
 .box img{
@@ -207,3 +208,41 @@ padding-bottom: 4rem;
 .rightw{
 	width: 40%;
 }
+
+.footer{
+	display: flex;
+	gap: 4.5rem;
+	padding: 4rem;
+}
+
+
+.footer a{
+	text-decoration: none;
+	color: grey;
+	font-size: smaller;
+	line-height: 1.8rem;
+}
+.footer h2{
+	color: rgb(103, 100, 100);
+	font-size:1rem;
+	margin: 15px 0;
+}
+
+.footerimg{
+	width: 25%;
+	padding-top: 3rem;
+	margin-bottom: 2rem;
+}
+.footerimg img{
+	margin-bottom: 2.5rem;
+}
+.imgtext{
+	padding-left: 0.5rem;
+	font-size: 11px;
+	color: rgb(116, 113, 113);
+}
+.socialtext{
+	margin: 0 10px;
+}
+
+

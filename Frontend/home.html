@@ -6,11 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/home.css">
-    <link rel="icon" type="image/x-icon" href="./images/homepage/apilabs.png">
+    <link rel="icon" type="image/x-icon" href="/images/apilabs.png">
+    <link rel="stylesheet" href="./styles/workspace.css">
     <title>Welcome to APILABS</title>
 </head>
 
 <body>
+
+    <nav style="position: sticky; top: 0;background-color: white; filter: invert(85%);">
+        <div id="nav-1">
+            <a href="./dashboard.html"><button>Home</button></a>
+            <a href="./workspace.html"><button>Workspaces</button></a>
+            <a href="#"><button>API Network</button></a>
+            <a href="#"><button>Explore</button></a>
+        </div>
+        <div id="search">
+            <button>
+                <img src="./images/navbar/search-normal-1.svg" alt="search-icon">
+                <span>Search APILABS</span>
+            </button>
+        </div>
+        <div id="nav-2">
+            <button id="invite-btn">
+                <img src="./images/navbar/add-group.png" alt="invite-icon">
+                <span>Invite</span>
+            </button>
+            <button id="settings-btn">
+                <img src="./images/navbar/setting.png" alt="settings-icon">
+            </button>
+            <button id="notification-btn">
+                <img src="./images/navbar/notification.png" alt="notifications-icon">
+            </button>
+            <button id="account-btn" style="filter: invert(85%);">
+                <img src="./images/navbar/account.png" alt="manage-accounts-icon">
+            </button>
+        </div>
+    </nav>
     <div class="outer-container">
         <div class="left-box">
             <div class="img-avatar">
@@ -100,9 +131,10 @@
         </div>
         <div class="right-box">
             <div>
-                <h2 color="" class="recently">Recently visited workspaces</h2>
+                <h2 class="recently">Recently visited workspaces</h2>
                 <div>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg style="background-color: #2e2d2d;padding: 2px;border-radius: 4px;" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1ZM6 4C6 2.89543 6.89543 2 8 2C9.10457 2 10 2.89543 10 4C10 5.10457 9.10457 6 8 6C6.89543 6 6 5.10457 6 4Z"
                             fill="#6B6B6B"></path>
@@ -113,7 +145,8 @@
                 </div>
 
                 <div>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg style="background-color: #2e2d2d;padding: 2px;border-radius: 4px;" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M4.5 2C3.11929 2 2 3.11929 2 4.5C2 5.88071 3.11929 7 4.5 7C5.88071 7 7 5.88071 7 4.5C7 3.11929 5.88071 2 4.5 2ZM3 4.5C3 3.67157 3.67157 3 4.5 3C5.32843 3 6 3.67157 6 4.5C6 5.32843 5.32843 6 4.5 6C3.67157 6 3 5.32843 3 4.5Z"
                             fill="#6B6B6B"></path>
@@ -127,6 +160,64 @@
                             d="M8 12.9423C8 11.7196 8.41713 10.8776 9.02845 10.3357C9.64934 9.78539 10.5218 9.5 11.5 9.5C12.4782 9.5 13.3507 9.78539 13.9716 10.3357C14.5829 10.8776 15 11.7196 15 12.9423V14H16V12.9423C16 11.4727 15.4881 10.3436 14.6349 9.58736C13.7912 8.83961 12.6636 8.5 11.5 8.5C10.3364 8.5 9.20878 8.83961 8.36515 9.58736C7.51194 10.3436 7 11.4727 7 12.9423V14H8V12.9423Z"
                             fill="#6B6B6B"></path>
                     </svg><a href="" type="" color="content-color-primary" class="teamworkspace">Team Workspace</a>
+                </div>
+
+            </div>
+            <div>
+                <h2 class="explore">Explore popular APIs</h2>
+                <div>
+                    <div class="exploredata">
+                        <a class="exploreimg"
+                            href="https://postman.com/zohocrmdevelopers/workspace/zoho-crm-developers/collection/8522016-0a15778a-ccb1-4676-98b7-4cf1fe7fc940?ctx=documentation">
+                            <div class="exploreimgbox"><img class="team-logo--image"
+                                    src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1629874567/team/a0bace7a73b00bfae4b9f94a22a632ca9b3e24490860b13ef13d0eccdd1f15d7"
+                                    loading="lazy"></div>
+                        </a>
+                        <div>
+                            <h3>Zoho CRM REST API</h3>
+                            <p class="explorepara">Use this collection to test and explore the CRM APIs in various
+                                environments for multiple
+                                orgs.</p>
+                            <p>By
+                                Zoho CRM Developers</p>
+                        </div>
+
+                    </div>
+                    <div class="exploredata">
+                        <a class="exploreimg"
+                            href="https://postman.com/zohocrmdevelopers/workspace/zoho-crm-developers/collection/8522016-0a15778a-ccb1-4676-98b7-4cf1fe7fc940?ctx=documentation">
+                            <div class="exploreimgbox"><img class="team-logo--image"
+                                    src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1653292438/team/b333f4ebae4200514bd3dc6ca0cbffd9818961332850dbb4acd906f239b589e8.png"
+                                    loading="lazy"></div>
+                        </a>
+                        <div>
+                            <h3>UiPath Add-ins Guide</h3>
+                            <p class="explorepara">explore the Uipath APIs in various
+                                environments for multiple
+                                orgs.</p>
+                            <p>By
+                                UiPath</p>
+                        </div>
+
+                    </div>
+                    <div class="exploredata">
+                        <a class="exploreimg"
+                            href="https://postman.com/zohocrmdevelopers/workspace/zoho-crm-developers/collection/8522016-0a15778a-ccb1-4676-98b7-4cf1fe7fc940?ctx=documentation">
+                            <div class="exploreimgbox"><img class="team-logo--image"
+                                    src="https://res.cloudinary.com/postman/image/upload/t_team_logo/v1/team/default-C5"
+                                    loading="lazy"></div>
+                        </a>
+                        <div>
+                            <h3>OAuth 2.0 and OpenID Connect</h3>
+                            <p class="explorepara">Use this collection for multiple
+                                orgs.</p>
+                            <p>By
+                                cyberArk identity</p>
+                        </div>
+
+                    </div>
+
+
                 </div>
 
             </div>
