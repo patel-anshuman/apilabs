@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    /* overflow: hidden; */
 }
 a{
     text-decoration: none;
@@ -9,6 +10,8 @@ a{
 }
 body{
     color: azure;
+    /* overflow: hidden; */
+    /* height: 100vh; */
 }
 
 .heading{
@@ -27,16 +30,29 @@ body{
     margin: 15px 0;
 }
 .outer-container{
-    height: 100%;
+    height:100vh;
     display: flex;
 }
 .left-box{
     width: 22%;
     padding-left: 25px;
     padding-top: 20px;
-    background-color: #262626;
+    background-color: hsl(0, 0%, 15%);
+    overflow: scroll;
+    overflow-x: hidden;
+
   
 }
+
+.left-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.left-box::-webkit-scrollbar-thumb {
+    background-color:rgb(64, 63, 63);
+    border-radius: 10px;
+}
+  
 .right-box{
     width: 78%;
     background-color: #212121;
@@ -44,7 +60,19 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:12px;
     font-weight: 600;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+
+.right-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.right-box::-webkit-scrollbar-thumb {
+    background-color:rgb(64, 63, 63);
+    border-radius: 10px;
+}
+
 .right-box>div{
     display: flex;
     flex-direction: column;
@@ -54,8 +82,6 @@ body{
 
 .right-box svg{
   margin-right:10px
-
-    /* gap: 15px; */
 }
 
 .right-box>div>div{
@@ -113,3 +139,32 @@ body{
     padding: 7px 15px;
 }
 
+.explore{
+    margin-top: 2.5rem;
+    /* border-bottom:1px solid rgb(59, 56, 56); ; */
+    padding-bottom: 15px;
+}
+
+.exploredata{
+    display: flex;
+    gap: 20px;
+    /* width: 80%; */
+    margin: 1rem 0;
+    border-bottom:1px solid rgb(59, 56, 56);
+}
+
+.exploreimgbox{
+    width: 2rem;
+}
+
+.team-logo--image{
+    width: 100%;
+}
+
+.exploredata>div{
+    padding: 10px;
+    width: 52%;
+}
+.explorepara{
+    margin: 1rem 0;
+}
