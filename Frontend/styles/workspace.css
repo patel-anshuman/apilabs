@@ -109,6 +109,10 @@ nav {
     height: 24px;
 }
 
+#account-btn:hover + #account-window {
+    display: block;
+}
+
 #account-window {
 
     position: absolute;
@@ -122,7 +126,11 @@ nav {
     border-radius: 5px;
     border: none;
     padding: 10px;
-    display: none; /* Initially hide the account window */
+    display: none; 
+}
+
+#account-window:hover {
+    display: block;
 }
 
 #account-window > img {
@@ -234,12 +242,12 @@ nav {
     border: 2px solid red;
 } */
 
-#side-pane-body-button {
-    width: 100px;
+.side-pane-body-button {
+    width: 65px;
     border: 1px solid #d5d6d6;
 }
 
-#side-pane-body-button > button {
+.side-pane-body-button > button {
     width: 90%;
     height: 50px;
     margin: 5%;
@@ -254,36 +262,58 @@ nav {
     flex-direction: column;
 }
 
-#side-pane-body-button>button:hover {
+.side-pane-tab.active {
+    background-color: #e6e6e6;
+}
+
+.side-pane-tab.active img {
+    opacity: 100%;
+}
+
+.side-pane-tab.active span {
+    color: black;
+}
+
+.side-pane-body-area.show {
+    display: block;
+}
+
+.side-pane-body-button>button:hover {
     background-color: #ededed;
 }
 
-#side-pane-body-button > button > img {
+.side-pane-body-button > button > img {
     width: 15px;
     height: auto;
+    opacity: 50%;
 }
 
-#side-pane-body-area {
+.side-pane-body-button > button > span {
+    color: #AAA;
+}
+
+.side-pane-body-area {
+    display: none;
     overflow-y: scroll;
     width: 100%;
     border: 1px solid #d5d6d6;
 }
 
-#side-pane-body-area::-webkit-scrollbar {
+.side-pane-body-area::-webkit-scrollbar {
     width: 8px;
 }
 
-#side-pane-body-area::-webkit-scrollbar-track {
+.side-pane-body-area::-webkit-scrollbar-track {
     background: #f1f1f1;
     /* Color of the track */
 }
 
-#side-pane-body-area::-webkit-scrollbar-thumb {
+.side-pane-body-area::-webkit-scrollbar-thumb {
     background: #888;
     /* Color of the thumb */
 }
 
-#side-pane-body-area::-webkit-scrollbar-thumb:hover {
+.side-pane-body-area::-webkit-scrollbar-thumb:hover {
     background: #555;
     /* Color of the thumb when hovering */
 }
@@ -291,7 +321,6 @@ nav {
 #work-pane>div {
     /* border: 1px solid red; */
     font-family: Arial, Helvetica, sans-serif;
-
 }
 
 #work-title {

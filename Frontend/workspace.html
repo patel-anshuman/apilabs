@@ -41,15 +41,14 @@
         <button id="account-btn">
           <img src="./images/navbar/account.png" alt="manage-accounts-icon" />
         </button>
+        <div id="account-window" class="show">
+            <img src="./images/navbar/account.png" />
+            <b><p id="user-name">user.name</p></b>
+            <p id="user-email">user@email.com</p>
+            <button>Sign Out</button>
+        </div>
       </div>
     </nav>
-
-    <div id="account-window" class="show">
-      <img src="./images/navbar/account.png" />
-      <b><p id="user-name">user.name</p></b>
-      <p id="user-email">user@email.com</p>
-      <button>Sign Out</button>
-    </div>
 
     <!------------------------------------ Workspace ------------------------------------------>
     <section id="workspace">
@@ -67,23 +66,29 @@
           </div>
         </div>
         <div id="side-pane-body">
-          <div id="side-pane-body-button">
-            <button>
+          <div class="side-pane-body-button">
+            <button class="side-pane-tab" id="collections-btn" onclick="openArea(event, 'area-1')">
               <img src="./images/workspace/collection.png" alt="" />
               <span>Collections</span>
             </button>
-            <button>
+            <button class="side-pane-tab" id="enviroments-btn" onclick="openArea(event, 'area-2')">
               <img src="./images/workspace/hosting.png" alt="" />
               <span>Enviroments</span>
             </button>
-            <button>
+            <button class="side-pane-tab" id="history-btn" onclick="openArea(event, 'area-3')">
               <img src="./images/workspace/history.png" alt="" />
               <span>History</span>
             </button>
             <hr />
           </div>
-          <div id="side-pane-body-area">
-            <!-- All requests data appended here by DOM -->
+          <div class="side-pane-body-area" id="area-1" for="collections-btn">
+            <!-- Collection data rendered here -->
+          </div>
+          <div class="side-pane-body-area" id="area-2" for="enviroments-btn">
+            <!-- Enviroments data rendered here -->
+          </div>
+          <div class="side-pane-body-area" id="area-3" for="history-btn">
+            <!-- History data rendered here -->
           </div>
         </div>
       </div>
@@ -100,32 +105,13 @@
               <option value="PATCH">PATCH</option>
               <option value="DELETE">DELETE</option>
             </select>
-            <input
-              type="url"
-              name="url"
-              id="url"
-              placeholder="Enter URL or paste text"
-            />
+            <input type="url" name="url" id="url" placeholder="Enter URL or paste text"/>
             <button id="send-btn">Send</button>
           </div>
           <div id="work-data">
-            <button
-              class="tab"
-              id="params-btn"
-              onclick="openTab(event, 'tab1')"
-            >
-              Params
-            </button>
-            <button
-              class="tab"
-              id="headers-btn"
-              onclick="openTab(event, 'tab2')"
-            >
-              Headers
-            </button>
-            <button class="tab" id="body-btn" onclick="openTab(event, 'tab3')">
-              Body
-            </button>
+            <button class="tab" id="params-btn" onclick="openTab(event, 'tab1')">Params</button>
+            <button class="tab" id="headers-btn" onclick="openTab(event, 'tab2')">Headers</button>
+            <button class="tab" id="body-btn" onclick="openTab(event, 'tab3')">Body</button>
           </div>
           <div id="tab1" class="tab-content" for="params-btn">
             <table>
@@ -333,6 +319,28 @@
     // accountButton.addEventListener('click', function() {
     //     accountWindow.classList.toggle('hidden');
     // });
+
+    //Side pane: collections, enviroments, history
+    function openArea(evt, tabName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="side-pane-body-area" and hide them
+      sidePaneBodyArea = document.getElementsByClassName("side-pane-body-area");
+      for (i = 0; i < sidePaneBodyArea.length; i++) {
+        sidePaneBodyArea[i].classList.remove("show");
+      }
+
+      // Get all elements with class="side-pane-tab" and remove the class "active"
+      sidePaneTabLinks = document.getElementsByClassName("side-pane-tab");
+      for (i = 0; i < sidePaneTabLinks.length; i++) {
+        sidePaneTabLinks[i].classList.remove("active");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabName).classList.add("show");
+      evt.currentTarget.classList.add("active");
+    }
 
     // Input data tabs params, headers, body
     function openTab(evt, tabName) {
