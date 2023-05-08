@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="./images/apilabs.png" type="image/x-icon">
     <title>My Workspace</title>
     <link rel="stylesheet" href="./styles/workspace.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <!------------------------------------ Nav bar ------------------------------------------>
@@ -98,6 +99,7 @@
                     </select>
                     <input type="url" name="url" id="url" placeholder="Enter URL or paste text">
                     <button id="send-btn">Send</button>
+                    
                 </div>
                 <div id="work-data">
                     <button class="tab" id="params-btn" onclick="openTab(event, 'tab1')">Params</button>
@@ -183,6 +185,7 @@
     </section>
 
 </body>
+<script src="./scripts.js"></script>
 <script>
     // const accountBtn = document.getElementById('account-btn');
     // const accountWindow = document.getElementById('account-window');
@@ -212,5 +215,8 @@
       document.getElementById(tabName).classList.add("show");
       evt.currentTarget.classList.add("active");
     }
+
+
+    
 </script>
 </html>
