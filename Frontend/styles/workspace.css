@@ -444,6 +444,11 @@ nav {
     padding: 10px;
 }
 
+#response-body > textarea {
+    height: 98%;
+    width: 99.1%;
+}
+
 #response-body>p {
     margin: 0px;
     font-size: 14px;
