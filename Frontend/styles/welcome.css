@@ -1,7 +1,7 @@
 *{
     padding: 0;
     margin: 0;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 }
 body {
 	/* background: #149cbe; */
@@ -14,6 +14,7 @@ body {
     display: flex;
 	padding-bottom: 3rem;
 }
+
 
 
 .leftbox{
@@ -157,14 +158,15 @@ padding-bottom: 4rem;
 }
 
 .box4{
-	display: flex;
-	padding: 40px;
-	gap: 15px;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	padding: 80px;
+	gap: 25px;
 	margin-bottom: 2rem;
 }
 .box{
 	background-color: white;
-	width: 19%;
+	width: 70%;
 	padding: 1.5rem;
 }
 .box img{
@@ -210,7 +212,8 @@ padding-bottom: 4rem;
 }
 
 .footer{
-	display: flex;
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
 	gap: 4.5rem;
 	padding: 4rem;
 }
@@ -229,7 +232,6 @@ padding-bottom: 4rem;
 }
 
 .footerimg{
-	width: 25%;
 	padding-top: 3rem;
 	margin-bottom: 2rem;
 }
@@ -246,3 +248,37 @@ padding-bottom: 4rem;
 }
 
 
+@media screen and (max-width: 950px) {
+	.topbox{
+		flex-direction: column-reverse;
+	}
+	.leftbox{
+		width: 90vw;
+		padding-top: 2rem;
+	}
+	.rightbox{
+		width: 90vw;
+	}
+	.boxtop{
+		flex-direction: column;
+	}
+	.whatleft{
+		width: 70vw;
+		margin: auto;
+	}
+	.whatright{
+		width: 40vw;
+		margin: auto;
+		margin-top: 3rem;
+	}
+	.box4{
+		grid-template-columns: auto auto;
+	}
+	.footer{
+		grid-template-columns:  auto auto;
+		width: 70%;
+		font-size:large;
+		justify-content: space-around;
+
+	}
+  }

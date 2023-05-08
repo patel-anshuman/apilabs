@@ -26,6 +26,22 @@ body{
     font-weight: 500;
 }
 
+.name{
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: #495FEA;
+    border-radius: 50%;
+    font-size: 3.5rem;
+    top: 14px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 .btn{
     margin: 15px 0;
 }
@@ -39,9 +55,7 @@ body{
     padding-top: 20px;
     background-color: hsl(0, 0%, 15%);
     overflow: scroll;
-    overflow-x: hidden;
-
-  
+    overflow-x: hidden;  
 }
 
 .left-box::-webkit-scrollbar {
@@ -80,14 +94,21 @@ body{
     /* gap: 15px; */
 }
 
-.right-box svg{
+/* .right-box svg{
   margin-right:10px
-}
+} */
 
 .right-box>div>div{
     border-top: 1px solid rgb(59, 56, 56);
     padding-top: 15px;
     margin-top: 15px;
+}
+
+
+.wrkspace{
+    align-items: center;
+    display: flex;
+    gap: 10px;
 }
 
 .left-box h1{
@@ -123,6 +144,7 @@ body{
     font-weight: 500;
 }
 .img-avatar{
+    position: relative;
     width:5rem;
     padding:10px;
     border:1px solid rgb(59, 57, 57);
@@ -167,4 +189,16 @@ body{
 }
 .explorepara{
     margin: 1rem 0;
+}
+
+@media screen and (max-width: 950px) {
+    .outer-container{
+        flex-direction: column;
+    }
+    /* .left-box{
+        width: 100vw;
+    }
+    .right-box{
+        width: 100vw;
+    } */
 }
