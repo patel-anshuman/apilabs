@@ -1,6 +1,10 @@
 body {
     margin: 0px;
     padding: 0px;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 /*--------------------- Navbar --------------------- */
@@ -502,4 +506,36 @@ nav {
     line-height: 1.5;
     border: 1px solid #ccc;
     border-radius: 3px;
+  }
+
+  /* Adjust styles for screens wider than 768px */
+@media only screen and (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+    .container {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+    .column {
+      float: left;
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  }
+  
+  /* Adjust styles for screens narrower than 768px */
+  @media only screen and (max-width: 767px) {
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+    .column {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
   }
