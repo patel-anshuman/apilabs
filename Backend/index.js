@@ -1,61 +1,107 @@
-const { Socket } = require("dgram")
 const express = require("express")
 const app = express()
-const server = require("http").createServer(app)
-const io = require("socket.io")(server)
-const PORT = 8954
-const {connection,project_model} = require("./DBandModel.js")
+const cookieParser=require("cookie-parser")
+require("dotenv").config()
+const {connection} = require("./db.js")
+const {UserRouter} = require("./routes/user.routes.js")
+const {auth} = require("./middleware/auth.middleware.js")
+const {fetchRouter} = require("./routes/fetch.routes.js")
+const {passport,flag,googlemailauth, email} = require("./middleware/google.auth.js")
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+ const c_id="51f8f470acf4c4a14934"
+ const client_secret="36ebc5fc85b8fbacd6bdd2aa78d5815b77917376"
+
+app.use(express.json())
+app.use(cookieParser())
 
 
-io.on("connection",(socket)=>{
-    console.log("New user is connected")
-    socket.on("MessengerName",async (TeamName)=>{
-        const {Team_name,User_name} = TeamName
-      const User_data = project_model({Team_Name:Team_name,Client_id:socket.io,Users:[{User_Name:User_name}]}) 
-      await User_data.save()
 
-        console.log(TeamName,socket.id)
+    app.get("/",(req,res)=>{
+        res.send("Hey google")
     })
-    socket.on("message",(msg)=>{
-        // console.log(msg)
-      socket.broadcast.emit("TeamMessage",{username:msg.username,message:msg.message})
+    app.get("/google",(req,res)=>{
+        res.send("Hey goggle")
     })
-    socket.on("disconnect",()=>{
-        console.log("User has been disconnected")
+    app.get("/gitlogin",(req,res)=>{
+        res.sendFile(__dirname+"/github.html")
     })
-})
-// io.on("connection", (socket) => {
-//     console.log("New user is connected")
-  
-//     // Joining a room for private chat
-//     socket.on("joinRoom", (roomId, userId) => {
-//       socket.join(roomId)
-//       socket.to(roomId).emit("userConnected", userId)
-//       console.log(`User ${userId} joined room ${roomId}`)
-//     })
-  
-//     // Handling private chat messages
-//     socket.on("privateMessage", (data) => {
-//       const { roomId, senderId, receiverId, message } = data
-//       socket.to(roomId).emit("newPrivateMessage", {
-//         senderId,
-//         receiverId,
-//         message,
-//       })
-//     })
-  
-//     // Handling group chat messages
-//     socket.on("groupMessage", (data) => {
-//       const { username, message } = data
-//       socket.broadcast.emit("newGroupMessage", { username, message })
-//     })
-  
-//     socket.on("disconnect", () => {
-//       console.log("User has been disconnected")
-//     })
-//   })
+    app.get("/auth/github",async(req,res)=>{
+        const {code}=req.query
+        console.log(code)
+       const accessToken= await fetch("https://github.com/login/oauth/access_token",{
+            method:"POST",
+            headers:{
+                Accept:"application/json",
+                "content-type":"application/json"
+            },
+            body:JSON.stringify({
+              client_id:c_id,
+              client_secret:client_secret,
+              code:code,  
+            })
+        }).then((res)=>res.json())
+        const user=await fetch("https://api.github.com/user",{
+            headers:{
+                Authorization:`Bearer ${accessToken.access_token}`
+            }
+        }).then((res)=>res.json())
+        const useremailis = await fetch("https://api.github.com/user/emails", {
+            headers : {
+                Authorization : `Bearer ${accessToken.access_token}`
+            }
+        })
+        .then((res) => res.json())
+        .catch((err) => console.log(err))
+    
+        console.log(useremailis)
+        res.send("Sigin from github")
+    })
+    
+              /////Google///////
+    app.get("/",(req,res)=>{
+      res.send("Hello from nodejs application")
+    })
+
+    app.get("/googlelogin",(req,res)=>{
+      res.sendFile(__dirname+"/google.html")
+    })
+    app.get('/auth/google',
+      passport.authenticate('google', { scope: ['profile','email'] }));
+    
+    app.get('/auth/google/callback', 
+      passport.authenticate('google', { failureRedirect: '/login' ,session:false}),
+      function(req, res) {
+        // Successful authentication, redirect home.
+        console.log(req.user)
+        res.redirect('/');
+      });
+      console.log(email)
+ if(email){
+      app.use(googlemailauth)
+      app.use("fetchroutes",fetchRouter)
+}else{
+    app.use("/user",UserRouter)
+    app.use(auth)
+    app.use("fetchroutes",fetchRouter)
+}
 
 
-server.listen(PORT,()=>{
-    console.log(`Server is running at port ${PORT}`)
+
+
+
+
+
+
+
+
+
+///listining
+app.listen(process.env.port,async()=>{
+    try {
+        await connection
+        console.log("Server is connected with mongodb")
+    } catch (error) {
+        console.log("Server is not connected with mongodb")
+    }
+    console.log(`listening on port : ${process.env.port}`)
 })
