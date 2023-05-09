@@ -61,6 +61,7 @@ app.use(cookieParser())
     app.get("/",(req,res)=>{
       res.send("Hello from nodejs application")
     })
+
     app.get("/googlelogin",(req,res)=>{
       res.sendFile(__dirname+"/google.html")
     })
@@ -83,6 +84,7 @@ app.use(cookieParser())
     app.use(auth)
     app.use("fetchroutes",fetchRouter)
 }
+
 
 
 
