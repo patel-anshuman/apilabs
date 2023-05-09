@@ -31,7 +31,7 @@ body{
 .box {
     position: relative;
     width: 380px;
-    height: 420px;
+    height: 500px;
     background: #ab0e0e;
     border-radius: 8px;
     overflow: hidden;
