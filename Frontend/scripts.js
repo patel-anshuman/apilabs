@@ -5,6 +5,13 @@ const method = document.getElementById("method")
 const url = document.getElementById("url")
 const work_title = document.querySelector("#work-title")
 const response_body = document.getElementById("response-body")
+const key1=document.getElementById("tab2key1")
+const val1=document.getElementById("tab2val1")
+const key2=document.getElementById("tab2key2")
+const val2=document.getElementById("tab2val2")
+const key3=document.getElementById("tab2key3")
+const val3=document.getElementById("tab2val3")
+
   send_btn.addEventListener("click",e=>{
         e.preventDefault()
         const splitpayload = payload.value
@@ -33,16 +40,30 @@ const response_body = document.getElementById("response-body")
     //      return true
     //    }
     // }
+    
    if(splitpayload){
     obj={
       method:method.value,
       payload:JSON.parse(splitpayload),
       url:url.value,
+      headers:{
+        key1,
+        key2,
+        key3,
+        val1,
+        val2,val3,
+      }
       }
    }else{
     obj={
       method:method.value,
-      url:url.value,
+      url:url.value,headers:{
+        key1,
+        key2,
+        key3,
+        val1,
+        val2,val3,
+      }
       }
    }
 
