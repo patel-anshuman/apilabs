@@ -1,5 +1,6 @@
 const { User } = require("../model/user.model")
 const { Blacklist } = require("../model/blacklist.model")
+const {client} = require("../redis")
 
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -32,18 +33,16 @@ const login = async (req,res) =>{
     }
 
     const NormalToken = jwt.sign(
-        {userId:user._id,role:user.role},
+        {userId:user._id,name:user.name,email:user.email},
         process.env.JWT_ACCESS_TOKEN_SECRET_KEY,
         {expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRY}
     )
     const RefreshToken = jwt.sign(
-        {userId:user._id,role:user.role},
+        {userId:user._id,name:user.name,email:user.email},
         process.env.JWT_REFRESH_TOKEN_SECRET_KEY,
         {expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRY}
     );
-  
-    res.cookie("NormalToken",NormalToken,{maxAge:1000 * 60 *5})
-    res.cookie("RefreshToken",RefreshToken,{maxAge:1000 * 60 *5})
+    client.mset("NormalToken",NormalToken,"EX",60*process.env.JWT_ACCESS_TOKEN_EXPIRY,"RefreshToken",RefreshToken,"EX",60*process.env.JWT_REFRESH_TOKEN_EXPIRY)
     res.status(200).send({msg:"Login success"})
 }
 
@@ -55,20 +54,24 @@ const login = async (req,res) =>{
 
 const logoutUser = async (req,res) => {
     try {
-        const { NormalToken , RefreshToken } = req.cookies
-
+        const NormalToken=await client.get("NormalToken")
+        
+        const RefreshToken=await client.get("RefreshToken")
+        
         if(!NormalToken || !RefreshToken){
             res.status(400).send({msg:"Unauthorized"})
         }
 
-        const blacklistNormalToken= new Blacklist({token:NormalToken})
-        const blacklistRefreshToken= new Blacklist({token:RefreshToken})
+    //     const blacklistNormalToken= new Blacklist({token:NormalToken})
+    //     const blacklistRefreshToken= new Blacklist({token:RefreshToken})
 
-        await blacklistNormalToken.save()
-        await blacklistRefreshToken.save()
-     res.clearCookie("NormalToken")
-     res.clearCookie("RefreshToken")
-   
+    //     await blacklistNormalToken.save()
+    //     await blacklistRefreshToken.save()
+    //  res.clearCookie("NormalToken")
+    //  res.clearCookie("RefreshToken")
+    console.log(NormalToken,RefreshToken)
+     client.del("NormalToken","RefreshToken")
+    console.log(await client.mget("NormalToken","RefreshToken"))
      res.status(200).send({msg:"Logout succesfully"})
     } catch (error) {
          console.log("error:logout error")
@@ -81,7 +84,7 @@ const logoutUser = async (req,res) => {
 const newNormalToken = async (req,res) =>{
     try {
        
-       const RefreshToken= req.cookies.RefreshToken
+       const RefreshToken= await client.get("RefreshToken")
       
         
         if(!RefreshToken){
@@ -100,8 +103,8 @@ const newNormalToken = async (req,res) =>{
                 process.env.JWT_ACCESS_TOKEN_SECRET_KEY,
                 {expiresIn: process.env.JWT_ACCESS_TOKEN_EXPIRY}
         );
-        res.cookie("NormalToken",newNormaltoken,{maxAge:1000 * 60 *5})      
-          res.status(200).send({msg:"Token generated" ,newNormaltoken})
+        client.set("newNormalToken",newNormaltoken)
+        res.status(200).send({msg:"Token generated" ,newNormaltoken})
     } catch (error) {
         console.log("error:NewNormalToken error")
         res.status(400).send({msg:error.message})
