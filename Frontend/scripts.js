@@ -46,24 +46,11 @@ const val3=document.getElementById("tab2val3")
       method:method.value,
       payload:JSON.parse(splitpayload),
       url:url.value,
-      headers:{
-        key1,
-        key2,
-        key3,
-        val1,
-        val2,val3,
-      }
       }
    }else{
     obj={
       method:method.value,
-      url:url.value,headers:{
-        key1,
-        key2,
-        key3,
-        val1,
-        val2,val3,
-      }
+      url:url.value
       }
    }
 
@@ -71,39 +58,33 @@ const val3=document.getElementById("tab2val3")
     
     work_title.innerHTML = `<p><span style="color: green;">${method.value}</span> ${url.value}</p>`;
    }else if(method.value==="POST"){
-    
+    // response_body.innerText = "Data has been added"
     work_title.innerHTML = `<p><span style="color: orange;">${method.value}</span> ${url.value}</p>`;
    }    
    else if(method.value==="PUT"){
-    
+    // response_body.innerText = "Data has been updated"
     work_title.innerHTML = `<p><span style="color: blue;">${method.value}</span> ${url.value}</p>`;
    }    
    else if(method.value==="PATCH"){
-    
+    // response_body.innerText = "Data has been updated"
     work_title.innerHTML = `<p><span style="color: darkblue;">${method.value}</span> ${url.value}</p>`;
    }    
    else if(method.value==="DELETE"){
-    
+    // response_body.innerText = "Data has been deleted"
     work_title.innerHTML = `<p><span style="color: red;">${method.value}</span> ${url.value}</p>`;
    }    
 
    
     console.log(obj)
 forFetching(obj)
+forloadinghistory()
     })
 
 
 
 
  function forFetching(data){
-// axios.post('http://localhost:8596/', data)
-//  .then((data)=>{
-//     console.log(data)
-//   })
-//   .catch(error => {
-//     console.log(error);
-//   });
-  fetch("http://localhost:8596/",{
+  fetch("http://localhost:8887/fetchroutes/fetch",{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
@@ -111,17 +92,32 @@ forFetching(obj)
     body:JSON.stringify(data)
   }
   ).then((res)=>res.json()).then((newdata)=>{
+    console.log(newdata)
     console.log(JSON.stringify(newdata.msg, null, 2));
-    response_body.innerText = JSON.stringify(newdata.msg, null, 2)
+    response_body.innerHTML = `<textarea id="response-area"></textarea>`;
+    document.getElementById("response-area").value = JSON.stringify(newdata.msg, null, 2);
   }).catch((err)=>{
     console.log(err)
   })
 }
 
-
+function forloadinghistory(){
+  fetch('http://localhost:8887/fetchroutes/gethistory')
+          .then(response => 
+            // Handle the response from the server
+           response.json()
+            
+          ).then((data)=>{
+            console.log(data)
+          })
+          .catch(error => {
+            // Handle any errors that occur during the request
+            console.error('Error:', error);
+          });
+}
  
 
-
+forloadinghistory()
 
  
 

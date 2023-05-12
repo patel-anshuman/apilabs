@@ -63,11 +63,42 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script >
- 
- 
-    </script>
+      <script>
+        let id = document.getElementById("username");
+        let pass = document.getElementById("pass");
+        let loginBtn = document.getElementById("login_button");
+        
+        loginBtn.addEventListener("click", () => {
+          // Create a new object to hold the data to be sent in the request body
+          const payload = {
+            email: id.value,
+            password: pass.value
+          };
+        
+          // Send a POST request to the server with the payload data in the request body
+          fetch('http://localhost:8887/user/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+          .then(response => {
+            // Handle the response from the server
+            console.log('Response:', response);
+            location.href="./home.html"
+          })
+          .catch(error => {
+            // Handle any errors that occur during the request
+            console.error('Error:', error);
+          });
+        });
+        
+      </script>
 
-    
+
+
+
+
   </body>
 </html>
