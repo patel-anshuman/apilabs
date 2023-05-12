@@ -124,4 +124,7 @@ const getAllDataofUser = async (req,res) =>{
   }
 }
 
-  module.exports={fetchapiroute,getAllDataofUser}
+const getUserData = (req,res) =>{
+  res.status(200).send({name:req.name,email:req.email})
+}
+  module.exports={fetchapiroute,getAllDataofUser,getUserData}
