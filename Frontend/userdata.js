@@ -13,8 +13,8 @@ if(workspace_email&&workspace_name){
     workspace_email.innerText = userdata.email;
 }
 else if (name&&heading&&text){
-    name[0].innerText=userdata?.name[0]
-    heading[0].innerText=userdata?.name
-    text[0].innerText=userdata?.email
+    name[0].innerText=userdata?.name[0];
+    heading[0].innerText=userdata?.name;
+    text[0].innerText=userdata?.email;
 }
 })
