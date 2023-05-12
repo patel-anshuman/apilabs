@@ -25,10 +25,14 @@
         </button>
       </div>
       <div id="nav-2">
-        <button id="invite-btn">
+        <!-- <button id="invite-btn">
           <img src="./images/navbar/add-group.png" alt="invite-icon" />
           <span>Invite</span>
-        </button>
+        </button> -->
+        <!-- <label class="switch">
+          <input type="checkbox" id="toggle">
+          <span class="slider"></span>
+        </label> -->
         <button id="settings-btn">
           <img src="./images/navbar/setting.png" alt="settings-icon" />
         </button>
@@ -372,7 +376,7 @@
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].classList.remove("active");
       }
-          
+
       // Show the current tab, and add an "active" class to the button that opened the tab
       document.getElementById(tabName).classList.add("show");
       evt.currentTarget.classList.add("active");
@@ -406,5 +410,18 @@
     //   }
     // });
   </script>
-</html>
+  <!-- <script>
+    const toggleSwitch = document.querySelector("#toggle");
+    const body = document.querySelector("body");
 
+    function switchTheme(e) {
+      if (e.target.checked) {
+        body.classList.add("dark-theme");
+      } else {
+        body.classList.remove("dark-theme");
+      }
+    }
+
+    toggleSwitch.addEventListener("change", switchTheme, false);
+  </script> -->
+</html>
