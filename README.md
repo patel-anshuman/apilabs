@@ -1,8 +1,7 @@
 <img src="./APILABS_2.png" alt="banner" >
 
 # ApiLabs a PostMan Clone
-
-    ApiLabs is a clone of Postman, a popular API development tool used by developers to design, test, and document APIs. It provides a user-friendly interface that allows users to easily send HTTP requests to API endpoints and view the responses. Additionally, like Postman, ApiLabs includes features for automated testing, collaboration, and documentation, making it a valuable tool for API development teams .
+ApiLabs is a clone of Postman, a popular API development tool used by developers to design, test, and document APIs. It provides a user-friendly interface that allows users to easily send HTTP requests to API endpoints and view the responses. Additionally, like Postman, ApiLabs includes features for automated testing, collaboration, and documentation, making it a valuable tool for API development teams .
 
 
 ## Authors
