@@ -92,10 +92,12 @@ forloadinghistory()
     body:JSON.stringify(data)
   }
   ).then((res)=>res.json()).then((newdata)=>{
-    console.log(newdata)
+    console.log("Fetch Response",newdata)
     console.log(JSON.stringify(newdata.msg, null, 2));
     response_body.innerHTML = `<textarea id="response-area"></textarea>`;
     document.getElementById("response-area").value = JSON.stringify(newdata.msg, null, 2);
+   
+    forloadinghistory();
   }).catch((err)=>{
     console.log(err)
   })
@@ -109,6 +111,7 @@ function forloadinghistory(){
             
           ).then((data)=>{
             console.log(data)
+            renderHistoryData(data.msg);
           })
           .catch(error => {
             // Handle any errors that occur during the request
@@ -119,12 +122,39 @@ function forloadinghistory(){
 
 forloadinghistory()
 
- 
+let historyArea = document.getElementById("area-3");
+
+function renderHistoryData(data){
+  // console.log("Render",data);
+  historyArea.innerHTML="";
+  for(let i=data.length-1; i>=0 ; i--){
+    let color;
+    if(data[i].method=="GET") {
+      color = "green";
+    } else if(data[i].method=="POST") {
+      color = "orange";
+    } else if(data[i].method=="PUT") {
+      color = "navy";
+    } else if(data[i].method=="PATCH") {
+      color = "navy";
+    } else {
+      color = "red";
+    }
+    historyArea.innerHTML+=`<p><span style="color: ${color}"><b>${data[i].method}</b></span> ${data[i].requestApi}</p>`;
+  }
 
 
+}
 
-
-
-
-
-
+document.getElementById("sign-out").addEventListener('click', ()=> {
+  fetch('http://localhost:8887/user/logout')
+          .then(response => {
+            // Handle the response from the server
+            // console.log('Response:', response);
+            location.href="./index.html";
+          })
+          .catch(error => {
+            // Handle any errors that occur during the request
+            console.error('Error:', error);
+          });
+})

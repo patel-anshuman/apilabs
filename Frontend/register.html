@@ -30,7 +30,7 @@
                     <i></i>
                 </div>
                 <div class="inputBox">
-                    <input type="password" required="required" id="pas">
+                    <input type="password" required="required" id="password">
                     <span>Password</span>
                     <i></i>
                 </div>
@@ -55,5 +55,35 @@
 </html>
 
 <script>
-
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+        let pass = document.getElementById("password");
+        let regBtn = document.getElementById("submit_btn");
+        
+        regBtn.addEventListener("click", () => {
+          // Create a new object to hold the data to be sent in the request body
+          const payload = {
+            name: name.value,
+            email: email.value,
+            password: pass.value
+          };
+        
+          // Send a POST request to the server with the payload data in the request body
+          fetch('http://localhost:8887/user/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          })
+          .then(response => {
+            // Handle the response from the server
+            console.log('Response:', response);
+            location.href="./login.html";
+          })
+          .catch(error => {
+            // Handle any errors that occur during the request
+            console.error('Error:', error);
+          });
+        });
 </script>
