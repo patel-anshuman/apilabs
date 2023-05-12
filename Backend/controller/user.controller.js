@@ -43,7 +43,7 @@ const login = async (req,res) =>{
         {expiresIn: process.env.JWT_REFRESH_TOKEN_EXPIRY}
     );
     client.mset("NormalToken",NormalToken,"EX",60*process.env.JWT_ACCESS_TOKEN_EXPIRY,"RefreshToken",RefreshToken,"EX",60*process.env.JWT_REFRESH_TOKEN_EXPIRY)
-    res.status(200).send({msg:"Login success"})
+    res.status(200).send({msg:"Login success","name":user.name,"email":user.email})
 }
 
      catch (error) {

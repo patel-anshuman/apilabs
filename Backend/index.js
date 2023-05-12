@@ -7,7 +7,7 @@ const {UserRouter} = require("./routes/user.routes.js")
 const {auth} = require("./middleware/auth.middleware.js")
 const {fetchRouter} = require("./routes/fetch.routes.js")
 const cors =require("cors")
-const {passport,flag,googlemailauth, email} = require("./middleware/google.auth.js")
+// const {passport,flag,googlemailauth, email} = require("./middleware/google.auth.js")
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
  const c_id="51f8f470acf4c4a14934"
  const client_secret="36ebc5fc85b8fbacd6bdd2aa78d5815b77917376"
