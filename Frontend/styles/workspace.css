@@ -524,7 +524,10 @@ nav {
       box-sizing: border-box;
     }
   }
-  
+  #response-area{
+    color:orangered ;
+    background-color: #EEE;
+  }
   /* Adjust styles for screens narrower than 768px */
   @media only screen and (max-width: 767px) {
     .container {
