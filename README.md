@@ -46,7 +46,7 @@ ApiLabs is a clone of Postman, a popular API development tool used by developers
 - Back-End 
 
 ## Deployed link 
-[https://apilabs.netlify.app/](API Labs)
+[Live 🌎 ](https://apilabs.netlify.app/)
 
 ## Screenshots
 
