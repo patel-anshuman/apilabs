@@ -53,6 +53,7 @@
 </body>
 
 </html>
+<script src="./src/api.js"></script>
 
 <script>
         let name = document.getElementById("name");
@@ -69,7 +70,7 @@
           };
         
           // Send a POST request to the server with the payload data in the request body
-          fetch('http://localhost:8887/user/register', {
+          fetch(`${baseurl}/user/register`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

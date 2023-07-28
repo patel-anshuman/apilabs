@@ -84,7 +84,7 @@ forloadinghistory()
 
 
  function forFetching(data){
-  fetch("http://localhost:8887/fetchroutes/fetch",{
+  fetch(`${baseurl}/api/test`,{
     method:"POST",
     headers:{
       "Content-Type":"application/json"
@@ -92,10 +92,10 @@ forloadinghistory()
     body:JSON.stringify(data)
   }
   ).then((res)=>res.json()).then((newdata)=>{
-    console.log("Fetch Response",newdata)
-    console.log(JSON.stringify(newdata.msg, null, 2));
+    console.log("Fetch Response",newdata.data)
+    console.log(JSON.stringify(newdata.data, null, 2));
     response_body.innerHTML = `<textarea id="response-area"></textarea>`;
-    document.getElementById("response-area").value = JSON.stringify(newdata.msg, null, 2);
+    document.getElementById("response-area").value = JSON.stringify(newdata.data, null, 2);
    
     forloadinghistory();
   }).catch((err)=>{
@@ -104,14 +104,14 @@ forloadinghistory()
 }
 
 function forloadinghistory(){
-  fetch('http://localhost:8887/fetchroutes/gethistory')
+  fetch(`${baseurl}/api/getallAPisdata`)
           .then(response => 
             // Handle the response from the server
            response.json()
             
           ).then((data)=>{
-            console.log(data)
-            renderHistoryData(data.msg);
+            console.log(data.data)
+            renderHistoryData(data.data)
           })
           .catch(error => {
             // Handle any errors that occur during the request
@@ -126,6 +126,7 @@ let historyArea = document.getElementById("area-3");
 
 function renderHistoryData(data){
   // console.log("Render",data);
+  console.log(data)
   historyArea.innerHTML="";
   for(let i=data.length-1; i>=0 ; i--){
     let color;
@@ -146,8 +147,10 @@ function renderHistoryData(data){
 
 }
 
+
+
 document.getElementById("sign-out").addEventListener('click', ()=> {
-  fetch('http://localhost:8887/user/logout')
+  fetch(`${baseurl}/user/logout`)
           .then(response => {
             // Handle the response from the server
             // console.log('Response:', response);

@@ -1,0 +1,5 @@
+services:
+  - name: api_tester_app_by_typescript
+    type: web
+    buildCommand: npm install && npm run build
+    startCommand: npm start

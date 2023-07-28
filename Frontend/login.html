@@ -53,7 +53,7 @@
         <a href="./register.html" style="text-align: center;" id="registration">Register Here</a>
       </div>
     </div>
-
+    <script src="./src/api.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
       <script>
         let id = document.getElementById("username");
@@ -68,16 +68,19 @@
           };
         
           // Send a POST request to the server with the payload data in the request body
-          fetch('http://localhost:8887/user/login', {
+          fetch(`${baseurl}/user/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
           })
-          .then(response => {
+          .then(response => 
             // Handle the response from the server
-            console.log('Response:', response);
+            response.json()
+          ).then((data)=>{
+            console.log('Response:', data);
+            alert(`${data.msg}`)
             location.href="./home.html"
           })
           .catch(error => {
